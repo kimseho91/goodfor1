@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="<%=application.getContextPath()%>/resources/css/style.css">
 	<link rel="stylesheet" type="text/css" href="<%=application.getContextPath()%>/resources/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<%=application.getContextPath()%>/resources/css/metismenu.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap&subset=korean" rel="stylesheet">
 	
 	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
