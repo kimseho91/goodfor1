@@ -20,6 +20,8 @@ auth_vue = {
 							<div id="btn_mypage" style="display:inline-block;width:200px;color:white;font-size:15px">마이페이지</div>
 							<div id="btn_notice" style="display:inline-block;width:200px;color:white;font-size:15px">공지사항</div>
 							<div id="btn_admin" style="display:inline-block;width:200px;color:white;font-size:15px">관리자</div>
+							<div id="btn_login" style="display:inline-block;width:200px;color:white;font-size:15px">로그인</div>
+							<div id="btn_join" style="display:inline-block;width:200px;color:white;font-size:15px">회원가입</div>
 						</li>
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" href="#">
@@ -68,7 +70,7 @@ auth_vue = {
 		</div>
 		<div>
         <div id="body_main" style="margin-top: 70px;">
-            <div id="body_img" style=" width:auto; height:400px; margin-top: 90px;">
+            <div id="body_img" style=" width:auto; height:400px; margin-top: 110px;">
                 <div class="container">
 					<div id="myCarousel" class="carousel slide" data-ride="carousel">
 						<!-- Indicators -->
@@ -101,13 +103,22 @@ auth_vue = {
 					</div>
 				</div>            
             </div>
-             <div id="body_icon" style="margin-top: 3%; margin-left: 37%;">
+             <div id="body_icon" style="margin-top: 10%; margin-left: 37%;">
                 <img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMTZfMjAz/MDAxNTc5MTQwOTY3OTE0.95-bo0_ntpxsrIeoIqWUoHT-TVUYs0YDlNDtLZ8z92Ug.wz3LUDP5Kd0t0ekbeuTzgicMqpwGplqC_knxJrr3FL8g.PNG/account2.png?type=w740" alt="" style="width: 150px;">
                 <div style="display: inline-block; width: 30px;"></div>
                 <img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMTZfMTM5/MDAxNTc5MTQwOTY3NjMy.mZJis_aj0h2tU1VmFFoGZnj2Xo3N-oj7BI5ULU1NbdQg.l6pSBxTuVMfj4Z_eCCRL9ND1exLMYmYVFge1qmLTqv0g.PNG/mymoney2.png?type=w740" alt="" style="width: 150px;">
                 <div style="display: inline-block; width: 30px;"></div>
                 <img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMTdfMTY0/MDAxNTc5MjUxNTcwMTkz.PfILgtr9LAgoheS-NvBQSxDoFE-Oc_4xyAroHjY_h9gg.Xt_Q5DWb61N4M_-3nn9KlwQhuvNev3s_pDkS2mA3rCAg.PNG/info.png?type=w740" alt="" style="width: 150px;">
-            </div>
+			</div>
+			<div id="body_event" style="margin-top: 15%; margin-left: 25%;">
+				<img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMjBfODQg/MDAxNTc5NTEyMjIxMTM3.ZvWdkwURj9qw6aQHOBXAPph-v_J5lFGxeHe725PPxSIg.5j6q6MQyMyl6ToCILOaSY0wumUzokEXfv3mki5_CYaEg.JPEG/event_img1.jpg?type=w740" alt="" style="width: 200px; margin-left: 3%;" />
+
+				<img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMjBfMjA3/MDAxNTc5NTEyOTA3MDQz.f0pBrEa_SdGtvWgsSom4ZpWTRPZ2HM6IdY5_ebWMwswg.YC6DLFE7I6wjEflroLdhRupYVVUQMHrbFiVBZTZJ8c0g.JPEG/event_img2.jpg?type=w740" alt="" style="width: 200px; margin-left: 3%;" />
+				
+				<img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMjBfODQg/MDAxNTc5NTEyMjIxMTM3.ZvWdkwURj9qw6aQHOBXAPph-v_J5lFGxeHe725PPxSIg.5j6q6MQyMyl6ToCILOaSY0wumUzokEXfv3mki5_CYaEg.JPEG/event_img1.jpg?type=w740" alt="" style="width: 200px; margin-left: 3%;" />
+				
+				<img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMjBfMjA3/MDAxNTc5NTEyOTA3MDQz.f0pBrEa_SdGtvWgsSom4ZpWTRPZ2HM6IdY5_ebWMwswg.YC6DLFE7I6wjEflroLdhRupYVVUQMHrbFiVBZTZJ8c0g.JPEG/event_img2.jpg?type=w740" alt="" style="width: 200px; margin-left: 3%;" />
+			</div>
 		</div>
 		<div id="s-footer" style="margin-top: 100px;">
 			<h3 style="margin-left: 37%;">2019 - 2020 © Goodfor. - www.Goodfor.com</h3>

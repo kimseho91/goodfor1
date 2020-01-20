@@ -34,7 +34,6 @@ auth = (()=>{
 			$.getScript(myPage_vue_js),
 			$.getScript(stockinfo_vue_js)
 			
-			
 		).done(()=>{
 			setContentView()
 			$('#btn_main').click(e=>{
@@ -84,13 +83,23 @@ auth = (()=>{
 				.html(myPage_vue.main({css: $.css(), img: $.img()}))
 				.appendTo('#body_main')
 			})
+			$('#btn_login').click(e=>{
+				e.preventDefault()
+				$('#body_main').empty()
+				.html(auth_vue.login({css: $.css(), img: $.img()}))
+				.appendTo('#body_main')
+			})
+			$('#btn_join').click(e=>{
+				e.preventDefault()
+				$('#body_main').empty()
+				.html(auth_vue.join({css: $.css(), img: $.img()}))
+				.appendTo('#body_main')
+			})
 		})
 	}
 	let setContentView =()=>{
 		$('body').html(auth_vue.auth_body({css: $.css(), img: $.img()}))
 	}
-	
-	
 
 	return {onCreate}	
 	
