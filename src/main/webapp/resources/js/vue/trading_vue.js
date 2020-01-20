@@ -5,8 +5,8 @@ trading_vue = {
 		return `<body style="width: auto; height: auto;">
   <div id="main_div" border="2" bordercolor="black" style="width: 1500px; height: 600px; margin-left: 7%">
      <div id="d_one" style="width: 975px; height: 300px; overflow: auto; background-color: white; float: left;">
-        <table id="tab1" border="1" bordercolor="black" style="width: 100%; height: 100%; table-layout: fixed; background-color: white; text-align: center;" >
-               <tr id="click_event1" style="width: 100%; height: 5%; background-color: #EFEFFB">
+        <table id="tab1" border="1" bordercolor="black" style="width: 975px; height: 300px; table-layout: fixed; background-color: white; text-align: center;" >
+               <tr id="click_event1" style="width: 100%; height: 30px; background-color: #EFEFFB">
                  <td id="btn_mystock" colspan="3">관심</td>
                  <td id="btn_lead" colspan="3">주도업종</td>
                  <td id="btn_rank" colspan="3">순위</td>
@@ -14,12 +14,12 @@ trading_vue = {
                  <td id="btn_da"colspan="3">예수금</td>
                  <td id="btn_log" colspan="3">일지</td>
                </tr>
-               <tr id="click_event2" style="width: 100%; height: 5%; background-color: white">
+               <tr id="click_event2" style="width: 100%; height: 30px; background-color: white">
                 <td id="btn_lmystock" colspan="2">보유종목</td>
                 <td id="btn_attention" colspan="2">관심종목</td>
                </tr>
                <tr id="attention_title" border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center; background-color: #E0E6F8;">
+                  style="width: 100%; height: 30px; text-align: center; background-color: #E0E6F8;">
                 <td colspan="3">종목명</td>
                 <td colspan="2">현재가</td>
                 <td colspan="2">대비</td>
@@ -143,7 +143,7 @@ trading_vue = {
      </div>
      <div id="d_three" style="width: 975px; height: 300px; overflow: auto; float: left; background-color: white">
         <table id="tab3" border="1" bordercolor="black" style="width: 100%; height: 100%; table-layout: fixed; text-align: center;">
-          <tr style=" height: 5%; background-color: #EFEFFB;">
+          <tr style=" height: 30px; background-color: #EFEFFB;">
             <td id="btn_time" colspan="2">시간별</td>
             <td id="btn_day" colspan="2">일자별</td>
             <td id="btn_buy" colspan="2">매수</td>
@@ -180,7 +180,7 @@ trading_vue = {
   },
   trading_mystock : ()=>{
     return `<table id="tab1" border="1" bordercolor="black" style="width: 100%; height: 100%; table-layout: fixed; background-color: #FBF8EF; text-align: center;" >
-               <tr id="click_event1" style="width: 100%; height: 5%; background-color: #EFEFFB">
+               <tr id="click_event1" style="width: 100%; height: 30px; background-color: #EFEFFB">
                  <td id="btn_mystock" colspan="2">관심</td>
                  <td id="btn_lead" colspan="2">주도업종</td>
                  <td id="btn_rank" colspan="2">순위</td>
@@ -188,13 +188,13 @@ trading_vue = {
                  <td id="btn_da"colspan="2">예수금</td>
                  <td id="btn_log" colspan="2">일지</td>
                </tr>
-               <tr id="click_event2" style="width: 100%; height: 5%;">
+               <tr id="click_event2" style="width: 100%; height: 30px;">
                 <!-- 보유종목 일떄 -->
                 <td id="btn_lmystock" colspan="2">보유종목</td>
                 <td id="btn_attention" colspan="2">관심종목</td>
                </tr>
                <tr id="attention_title" border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center; background-color: #E0E6F8;">
+                  style="width: 100%; height: 30px; text-align: center; background-color: #E0E6F8;">
                 <td colspan="3">종목명</td>
                 <td colspan="2">현재가</td>
                 <td colspan="2">대비</td>
@@ -222,7 +222,7 @@ trading_vue = {
   },
   trading_attention : ()=>{
     return `<table id="tab1" border="1" bordercolor="black" style="width: 100%; height: 100%; table-layout: fixed; background-color: #FBF8EF; text-align: center;" >
-               <tr id="click_event1" style="width: 100%; height: 5%; background-color: #EFEFFB">
+               <tr id="click_event1" style="width: 100%; height: 30px; background-color: #EFEFFB">
                  <td id="btn_lmystock" colspan="2">관심</td>
                  <td id="btn_lead" colspan="2">주도업종</td>
                  <td id="btn_rank" colspan="2">순위</td>
@@ -230,13 +230,13 @@ trading_vue = {
                  <td id="btn_da"colspan="2">예수금</td>
                  <td id="btn_log" colspan="2">일지</td>
                </tr>
-               <tr id="click_event2" style="width: 100%; height: 5%;">
+               <tr id="click_event2" style="width: 100%; height: 30px;">
                 <!-- 관심종목 일떄 -->
                 <td id="btn_mystock" colspan="2">보유종목</td>
                 <td id="btn_attention" colspan="2">관심종목</td>
                </tr>
                <tr id="attention_title" border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center; background-color: #E0E6F8;">
+                  style="width: 100%; height: 30px; text-align: center; background-color: #E0E6F8;">
                 <td colspan="3">종목명</td>
                 <td colspan="2">현재가</td>
                 <td colspan="2">대비</td>
@@ -264,7 +264,7 @@ trading_vue = {
   },
   trading_lead : ()=>{
     return `<table id="tab1" border="1" bordercolor="black" style="width: 100%; height: 100%; table-layout: fixed; background-color: #FBF8EF; text-align: center;" >
-               <tr id="click_event1" style="width: 100%; height: 5%; background-color: #EFEFFB">
+               <tr id="click_event1" style="width: 100%; height: 30px; background-color: #EFEFFB">
                  <td id="btn_mystock" colspan="2">관심</td>
                  <td id="btn_lead" colspan="2">주도업종</td>
                  <td id="btn_rank" colspan="2">순위</td>
@@ -272,7 +272,7 @@ trading_vue = {
                  <td id="btn_da"colspan="2">예수금</td>
                  <td id="btn_log" colspan="2">일지</td>
                </tr>
-               <tr id="click_event2" style="width: 100%; height: 5%;">
+               <tr id="click_event2" style="width: 100%; height: 30px;">
                 <td colspan="3">
                 <input type="radio" name="kospi" value="코스피">코스피
                 <input type="radio" name="kosdak" value="코스닥">코스닥
@@ -280,14 +280,14 @@ trading_vue = {
                 <td colspan="3"><input type="date"></td>
                 <td colspan="3"><input type="date"></td>
                </tr>
-               <tr border="1"; bordercolor="black"; style="width: 100%; height: 5%; text-align: center; background-color: #E0E6F8;">
+               <tr border="1"; bordercolor="black"; style="width: 100%; height: 30px; text-align: center; background-color: #E0E6F8;">
                 <!-- 주도업종, 코스피일때 화면 -->
                 <td colspan="3" rowspan="2">업종명</td>
                 <td colspan="4" style="background-color:skyblue">시작일</td>
                 <td colspan="4" style="background-color:pink">종료일</td>
                 <td colspan="3" rowspan="2">상승률</td>
                 </tr>
-                  <tr id="attention_title" border="1"; bordercolor="black"; style="width: 100%; height: 5%;  background-color: #E0E6F8;">
+                  <tr id="attention_title" border="1"; bordercolor="black"; style="width: 100%; height: 30px;  background-color: #E0E6F8;">
                     <td colspan="2">시가총액(억원)</td>
                     <td colspan="2">비중</td>
                     <td colspan="2">시가총액(억원)</td>
@@ -305,7 +305,7 @@ trading_vue = {
   },
   trading_rank: ()=>{
     return `<table id="tab1" border="1" bordercolor="black" style="width: 100%; height: 100%; table-layout: fixed; background-color: #FBF8EF; text-align: center;" >
-               <tr id="click_event1" style="width: 100%; height: 5%; background-color: #EFEFFB">
+               <tr id="click_event1" style="width: 100%; height: 30px; background-color: #EFEFFB">
                  <td id="btn_mystock" colspan="2">관심</td>
                  <td id="btn_lead" colspan="2">주도업종</td>
                  <td id="btn_rank" colspan="2">순위</td>
@@ -313,7 +313,7 @@ trading_vue = {
                  <td id="btn_da"colspan="2">예수금</td>
                  <td id="btn_log" colspan="2">일지</td>
                </tr>
-               <tr id="click_event2" style="width: 100%; height: 5%;">
+               <tr id="click_event2" style="width: 100%; height: 30px;">
                 <td colspan="4">
                 <input type="radio" name="kospi" value="코스피">코스피
                 <input type="radio" name="kosdak" value="코스닥">코스닥
@@ -326,7 +326,7 @@ trading_vue = {
                 </td>
                </tr>
                <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center; background-color: #E0E6F8;">
+                  style="width: 100%; height: 30px; text-align: center; background-color: #E0E6F8;">
                 <td colspan="2">종목명</td>
                 <td colspan="2">현재가</td>
                 <td colspan="2">전일대비</td>
@@ -350,7 +350,7 @@ trading_vue = {
   },
   trading_balance:()=>{
     return `<table id="tab1" border="1" bordercolor="black" style="width: 100%; height: 100%; table-layout: fixed; background-color: #FBF8EF; text-align: center;" >
-               <tr id="click_event1" style="width: 100%; height: 5%; background-color: #EFEFFB">
+               <tr id="click_event1" style="width: 100%; height: 30px; background-color: #EFEFFB">
                  <td id="btn_mystock" colspan="2">관심</td>
                  <td id="btn_lead" colspan="2">주도업종</td>
                  <td id="btn_rank" colspan="2">순위</td>
@@ -358,7 +358,7 @@ trading_vue = {
                  <td id="btn_da"colspan="2">예수금</td>
                  <td id="btn_log" colspan="2">일지</td>
                </tr>
-               <tr id="click_event2" style="width: 100%; height: 5%;">
+               <tr id="click_event2" style="width: 100%; height: 30px;">
                 <td colspan="2">
                   <select name="account">
                     <option value="accounto">계좌번호</option>
@@ -370,7 +370,7 @@ trading_vue = {
                 <td style="float: right;"><a href="#">조회</a></td>
                </tr>
                <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center; background-color: #E0E6F8;">
+                  style="width: 100%; height: 30px; text-align: center; background-color: #E0E6F8;">
                 <td colspan="2">순자산총액</td>
                 <td colspan="2">순자산총액 data</td>
                 <td colspan="2">총평가금액</td>
@@ -381,7 +381,7 @@ trading_vue = {
                 <td colspan="2">총수익률 data</td>
             </tr>
             <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center; background-color: #E0E6F8;">
+                  style="width: 100%; height: 30px; text-align: center; background-color: #E0E6F8;">
                 <td colspan="2">종목명</td>
                 <td colspan="2">구분</td>
                 <td colspan="2">보유량</td>
@@ -407,7 +407,7 @@ trading_vue = {
   },
   trading_da:()=>{
     return `<table id="tab1" border="1" bordercolor="black" style="width: 100%; height: 100%; table-layout: fixed; background-color: #FBF8EF; text-align: center;" >
-               <tr id="click_event1" style="width: 100%; height: 5%; background-color: #EFEFFB">
+               <tr id="click_event1" style="width: 100%; height: 30px; background-color: #EFEFFB">
                  <td id="btn_mystock" colspan="2">관심</td>
                  <td id="btn_lead" colspan="2">주도업종</td>
                  <td id="btn_rank" colspan="2">순위</td>
@@ -415,7 +415,7 @@ trading_vue = {
                  <td id="btn_da"colspan="2">예수금</td>
                  <td id="btn_log" colspan="2">일지</td>
                </tr>
-               <tr id="click_event2" style="width: 100%; height: 5%;">
+               <tr id="click_event2" style="width: 100%; height: 30px;">
                 <td colspan="2">
                   <select name="account">
                     <option value="accounto">계좌번호</option>
@@ -426,7 +426,7 @@ trading_vue = {
                 <td style="float: right;"><a href="#">조회</a></td>
                </tr>
             <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center; background-color: #E0E6F8;">
+                  style="width: 100%; height: 30px; text-align: center; background-color: #E0E6F8;">
                 <td>구분</td>
                 <td colspan="3">원화예수금</td>
                 <td colspan="3">추정현금성자산</td>
@@ -434,7 +434,7 @@ trading_vue = {
                 <td colspan="4">변제필요금액</td>
             </tr>
             <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                 <td>D+1일</td>
                 <td colspan="3">원화예수금 data</td>
                 <td colspan="3">추정현금성자산 data</td>
@@ -442,7 +442,7 @@ trading_vue = {
                 <td colspan="4">당일 변제필요금액 data</td>
             </tr>
             <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                 <td>D+2일</td>
                 <td colspan="3">원화예수금 data</td>
                 <td colspan="3">추정현금성자산 data</td>
@@ -450,12 +450,12 @@ trading_vue = {
                 <td colspan="4">익일 변제필요금액 data</td>
             </tr>
                <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center; background-color: #E0E6F8;">
+                  style="width: 100%; height: 30px; text-align: center; background-color: #E0E6F8;">
                 <td colspan="6">현금</td>
                 <td colspan="4">출금가능/대용</td>
                 <td colspan="4">D+2신용/대출</td>
                 <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                   <td colspan="3">D 현금성자산</td>
                   <td colspan="3">현금성자산 data</td>
                   <td colspan="2">출금가능금액</td>
@@ -464,7 +464,7 @@ trading_vue = {
                   <td colspan="2">융자총액 data</td>
                 </tr>
                 <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                   <td colspan="3">+예수금</td>
                   <td colspan="3">예수금 data</td>
                   <td colspan="2">대용총액</td>
@@ -473,14 +473,14 @@ trading_vue = {
                   <td colspan="2">담보유지비율 data</td>
                 </tr>
                 <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                   <td colspan="3">+CMA세후평가금액</td>
                   <td colspan="3">CMA세후평가금액 data</td>
                   <td colspan="4">미수없는금액</td>
                   <td colspan="4">미수금</td>
                 </tr>
                 <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                   <td colspan="3">+외화예수금</td>
                   <td colspan="3">외화예수금 data</td>
                   <td colspan="2">미수없는금액</td>
@@ -489,7 +489,7 @@ trading_vue = {
                   <td colspan="2">위탁/선물옵션미수금 data</td>
                 </tr>
                 <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                   <td colspan="3">-미수금및연체이자</td>
                   <td colspan="3">미수금및연체이자 data</td>
                   <td colspan="2">총주문가능금액(일반)</td>
@@ -498,7 +498,7 @@ trading_vue = {
                   <td colspan="2">미상환융자금 data</td>
                 </tr>
                 <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                   <td colspan="3">  비저축예수금</td>
                   <td colspan="3">비저축예수금 data</td>
                   <td colspan="2">현금주문가능금액</td>
@@ -510,7 +510,7 @@ trading_vue = {
   },
   trading_log:()=>{
     return `<table id="tab1" border="1" bordercolor="black" style="width: 100%; height: 100%; table-layout: fixed; background-color: #FBF8EF; text-align: center;" >
-               <tr id="click_event1" style="width: 100%; height: 5%; background-color: #EFEFFB">
+               <tr id="click_event1" style="width: 100%; height: 30px; background-color: #EFEFFB">
                  <td id="btn_mystock" colspan="2">관심</td>
                  <td id="btn_lead" colspan="2">주도업종</td>
                  <td id="btn_rank" colspan="2">순위</td>
@@ -518,7 +518,7 @@ trading_vue = {
                  <td id="btn_da"colspan="2">예수금</td>
                  <td id="btn_log" colspan="2">일지</td>
                </tr>
-               <tr id="click_event2" style="width: 100%; height: 5%;">
+               <tr id="click_event2" style="width: 100%; height: 30px;">
                 <td colspan="2">
                   <select name="account">
                     <option value="accounto">계좌번호</option>
@@ -534,7 +534,7 @@ trading_vue = {
                 <td style="float: right;"><a href="#">조회</a></td>
                </tr>
             <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                 <td colspan="2" style=" background-color: #E0E6F8;">금일 매수금액</td>
                 <td colspan="3">금일 매수금액 data</td>
                 <td colspan="2" style=" background-color: #E0E6F8;">예수금총액</td>
@@ -543,7 +543,7 @@ trading_vue = {
                 <td colspan="2">총 매매금액 data</td>
             </tr>
             <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                 <td colspan="2" style=" background-color: #E0E6F8;">금일 매도금액</td>
                 <td colspan="3">금일 매도금액 data</td>
                 <td colspan="2" style=" background-color: #E0E6F8;">D+1정산금액</td>
@@ -552,7 +552,7 @@ trading_vue = {
                 <td colspan="2">총 손익금액 data</td>
             </tr>
                <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                 <td colspan="2" style=" background-color: #E0E6F8;">금일 정산금액</td>
                 <td colspan="3">금일 정산금액 data</td>
                 <td colspan="2" style=" background-color: #E0E6F8;">D+2정산금액</td>
@@ -561,7 +561,7 @@ trading_vue = {
                 <td colspan="2">총 수익률 data</td>
             </tr>
                 <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                   <td colspan="1" style=" background-color: #E0E6F8;">종목명</td>
                   <td colspan="2" style=" background-color: pink;">매수량</td>
                   <td colspan="2" style=" background-color: pink;">평균매입가</td>
@@ -572,7 +572,7 @@ trading_vue = {
                   <td colspan="1" style=" background-color: #E0E6F8;">수익률</td>
                 </tr>
                 <tr border="1"; bordercolor="black";
-                  style="width: 100%; height: 5%; text-align: center;">
+                  style="width: 100%; height: 30px; text-align: center;">
                   <td colspan="1">종목명 data</td>
                   <td colspan="2">매수량 data</td>
                   <td colspan="2">평균매입가 data</td>
@@ -586,7 +586,7 @@ trading_vue = {
   },
   trading_time:()=>{
     return `<table id="tab3" border="1" bordercolor="black" style="width: 100%; height: 100%; table-layout: fixed; text-align: center;">
-          <tr style=" height: 10px; background-color: #EFEFFB;">
+          <tr style=" height: 30px; background-color: #EFEFFB;">
             <td id="btn_time" colspan="2">시간별</td>
             <td id="btn_day" colspan="2">일자별</td>
             <td id="btn_buy" colspan="2">매수</td>
@@ -594,7 +594,7 @@ trading_vue = {
             <td id="btn_correction" colspan="2">정정</td>
             <td id="btn_cancle" colspan="2">취소</td>
           </tr>
-          <tr style="height: 20px; background-color: #E0E6F8; ">
+          <tr style="height: 30px; background-color: #E0E6F8; ">
             <td colspan="3">시간대별</td>
             <td colspan="3">현재가</td>
             <td colspan="3">전일대비</td>
@@ -620,7 +620,7 @@ trading_vue = {
   },
   trading_day:()=>{
     return `<table id="tab3" border="1" bordercolor="black" style="width: 100%; height: 100%; table-layout: fixed; text-align: center;">
-          <tr style=" height: 10px; background-color: #EFEFFB;">
+          <tr style=" height: 30px; background-color: #EFEFFB;">
             <td id="btn_time" colspan="2">시간별</td>
             <td id="btn_day" colspan="2">일자별</td>
             <td id="btn_buy" colspan="2">매수</td>
@@ -628,7 +628,7 @@ trading_vue = {
             <td id="btn_correction" colspan="2">정정</td>
             <td id="btn_cancle" colspan="2">취소</td>
           </tr>
-          <tr style="height: 20px; background-color: #E0E6F8; ">
+          <tr style="height: 30px; background-color: #E0E6F8; ">
             <td colspan="3">일자별</td>
             <td colspan="3">종가</td>
             <td colspan="3">전일대비</td>
@@ -656,7 +656,7 @@ trading_vue = {
   },
   trading_buy:()=>{
     return `<table id="tab3" border="1" bordercolor="#E0E6F8" style="width: 100%; height: 100%; table-layout: fixed; text-align: center;">
-          <tr style=" height: 10px; background-color: #EFEFFB;">
+          <tr style=" height: 30px; background-color: #EFEFFB;">
             <td id="btn_time" colspan="2">시간별</td>
             <td id="btn_day" colspan="2">일자별</td>
             <td id="btn_buy" colspan="2">매수</td>
@@ -664,7 +664,7 @@ trading_vue = {
             <td id="btn_correction" colspan="2">정정</td>
             <td id="btn_cancle" colspan="2">취소</td>
           </tr>
-          <tr style="height: 5px; background-color: #E0E6F8;">
+          <tr style="height: 30px; background-color: #E0E6F8;">
             <td colspan="4">
                   <select name="account">
                     <option value="accounto">계좌번호</option>
@@ -746,7 +746,7 @@ trading_vue = {
   },
   trading_sell:()=>{
     return `<table id="tab3" border="1" bordercolor="#E0E6F8" style="width: 100%; height: 100%; table-layout: fixed; text-align: center;">
-          <tr style=" height: 10px; background-color: #EFEFFB;">
+          <tr style=" height: 30px; background-color: #EFEFFB;">
             <td id="btn_time" colspan="2">시간별</td>
             <td id="btn_day" colspan="2">일자별</td>
             <td id="btn_buy" colspan="2">매수</td>
@@ -754,7 +754,7 @@ trading_vue = {
             <td id="btn_correction" colspan="2">정정</td>
             <td id="btn_cancle" colspan="2">취소</td>
           </tr>
-          <tr style="height: 5px; background-color: #E0E6F8;">
+          <tr style="height: 30px; background-color: #E0E6F8;">
             <td colspan="4">
                   <select name="account">
                     <option value="accounto">계좌번호</option>
@@ -861,7 +861,7 @@ trading_vue = {
   },
   trading_correction:()=>{
     return `<table id="tab3" border="1" bordercolor="#E0E6F8" style="width: 100%; height: 100%; table-layout: fixed; text-align: center;">
-          <tr style=" height: 10px; background-color: #EFEFFB;">
+          <tr style=" height: 30px; background-color: #EFEFFB;">
             <td id="btn_time" colspan="2">시간별</td>
             <td id="btn_day" colspan="2">일자별</td>
             <td id="btn_buy" colspan="2">매수</td>
@@ -869,7 +869,7 @@ trading_vue = {
             <td id="btn_correction" colspan="2">정정</td>
             <td id="btn_cancle" colspan="2">취소</td>
           </tr>
-          <tr style="height: 5px; background-color: #E0E6F8;">
+          <tr style="height: 30px; background-color: #E0E6F8;">
             <td colspan="4">
                   <select name="account">
                     <option value="accounto">계좌번호</option>
@@ -951,7 +951,7 @@ trading_vue = {
   },
   trading_cancle:()=>{
     return `<table id="tab3" border="1" bordercolor="#E0E6F8" style="width: 100%; height: 100%; table-layout: fixed; text-align: center;">
-          <tr style=" height: 10px; background-color: #EFEFFB;">
+          <tr style=" height: 30px; background-color: #EFEFFB;">
             <td id="btn_time" colspan="2">시간별</td>
             <td id="btn_day" colspan="2">일자별</td>
             <td id="btn_buy" colspan="2">매수</td>
@@ -959,7 +959,7 @@ trading_vue = {
             <td id="btn_correction" colspan="2">정정</td>
             <td id="btn_cancle" colspan="2">취소</td>
           </tr>
-          <tr style="height: 5px; background-color: #E0E6F8;">
+          <tr style="height: 30px; background-color: #E0E6F8;">
             <td colspan="3">
                   <select name="account">
                     <option value="accounto">계좌번호</option>

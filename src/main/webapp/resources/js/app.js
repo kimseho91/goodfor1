@@ -14,7 +14,7 @@ app = (()=>{
 	let init =()=>{
 					_=$.ctx();
 					js=$.js();
-					authjs=js+'/cmm/auth.js';
+					authjs='/web/resources/js/cmm/auth.js';
 				  }
 	let onCreate =()=>{
 		init();
