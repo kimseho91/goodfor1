@@ -1,7 +1,7 @@
 "use strict";
 var auth_vue = auth_vue || {}
 auth_vue = {
-	auth_body: x=>{
+	auth_body: x => {
 		return `<div id="s-header">
 
 			<div class="topbar">
@@ -13,7 +13,7 @@ auth_vue = {
                     </a>
                 </div>
                 <nav class="navbar-custom">
-                    <ul class="list-unstyled topbar-right-menu float-right mb-0" style="width: 70%;">
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0" style="width: 90%;">
 	                    <li class="nav-link dropdown-toggle arrow-none waves-light waves-effect" style="margin-right: 170px; width: 70%;">
                             <div id="btn_trading" style="display:inline-block;width:15%;color:white;font-size:15px">트레이딩</div>
 							<div id="btn_stockinfo" style="display:inline-block;width:15%;color:white;font-size:15px">주식정보</div>
@@ -109,14 +109,14 @@ auth_vue = {
 					</div>
 				</div>
             </div>
-             <div id="body_icon" style="margin-top: 10%; margin-left: 37%;">
+             <div id="body_icon" style="margin-top: 5%; margin-left: 37%;">
                 <img src="${x.img}/icon1.png" alt="" style="width: 150px;">
                 <div style="display: inline-block; width: 30px;"></div>
                 <img src="${x.img}/icon2.png" alt="" style="width: 150px;">
                 <div style="display: inline-block; width: 30px;"></div>
                 <img src="${x.img}/icon3.png" alt="" style="width: 150px;">
 			</div>
-			<div id="body_event" style="margin-top: 15%; margin-left: 25%;">
+			<div id="body_event" style="margin-top: 5%; margin-left: 25%;">
 				<img src="${x.img}/event1.jpg" alt="" style="width: 200px; margin-left: 3%;" />
 
 				<img src="${x.img}/event2.jpg" alt="" style="width: 200px; margin-left: 3%;" />
@@ -133,7 +133,7 @@ auth_vue = {
 	},
 
 	join: () => {
-	    return `
+		return `
 
 	    <head>
 	<meta charset="utf-8">
@@ -237,10 +237,10 @@ auth_vue = {
 
 
 	    `
-	  },
+	},
 
-	  login: ()=> {
-	    return `
+	login: () => {
+		return `
 
 	    <head>
 	<meta charset="utf-8">
@@ -300,7 +300,7 @@ auth_vue = {
 
 	  `
 
-	  },
+	},
 
 
 };

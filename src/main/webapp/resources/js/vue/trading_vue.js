@@ -2,49 +2,50 @@
 var trading_vue = trading_vue || {}
 trading_vue = {
 	trading_mainbody : x=>{
-		return `<body style="width: auto; height: auto;">
-  <div id="main_div" border="2" bordercolor="black" style="width: 1500px; height: 600px; margin-left: 7% background-color:red;>
-     <div id="d_one" style="width: 975px; height: 300px; overflow: auto; background-color: white; float: left;">
+    return `
+    <body style="width: auto; height: auto;">
+    <div id="main_div" border="2" bordercolor="black" style="width: 1500px; height: 600px; margin-left: 7%;">
+      <div id="d_one" style="width: 975px; height: 300px; overflow: auto; background-color: white; float: left;">
         <table id="tab1" border="1" bordercolor="black" style="width: 975px; height: 300px; table-layout: fixed; background-color: white; text-align: center;" >
-               <tr id="click_event1" style="width: 100%; height: 30px; background-color: #B5C7EC">
-                 <td id="btn_mystock" colspan="3">관심</td>
-                 <td id="btn_lead" colspan="3">주도업종</td>
-                 <td id="btn_rank" colspan="3">순위</td>
-                 <td id="btn_balance" colspan="3">잔고</td>
-                 <td id="btn_da"colspan="3">예수금</td>
-                 <td id="btn_log" colspan="3">일지</td>
-               </tr>
-               <tr id="click_event2" style="width: 100%; height: 30px; background-color: white">
-                <td id="btn_lmystock" colspan="2">보유종목</td>
-                <td id="btn_attention" colspan="2">관심종목</td>
-               </tr>
-               <tr id="attention_title" border="1"; bordercolor="black";
-                  style="width: 100%; height: 30px; text-align: center; background-color: #84A3E0;">
-                <td colspan="2">종목명</td>
-                <td colspan="2">현재가</td>
-                <td colspan="2">대비</td>
-                <td colspan="2">등락률</td>
-                <td colspan="2">시가</td>
-                <td colspan="2">고가</td>
-                <td colspan="2">저가</td>
-                <td colspan="2">매도호가</td>
-                <td colspan="2">매수호가</td>
-                <td colspan="2">거래량</td>
-            </tr>
-               <tr id="attention_data" style="width: 100%;">
-                <td colspan="2" style="text-align: left;">보유종목명 data</td>
-                <td colspan="2" style="text-align: center;">현재가 data</td>
-                <td colspan="2" style="text-align: center;">대비 data</td>
-                <td colspan="2" style="text-align: center;">등락률 data</td>
-                <td colspan="2" style="text-align: center;">시가 data</td>
-                <td colspan="2" style="text-align: left;">고가 data</td>
-                <td colspan="2" style="text-align: left;">저가 data</td>
-                <td colspan="2" style="text-align: left;">매도호가 data</td>
-                <td colspan="2" style="text-align: left;">매수호가 data</td>
-                <td colspan="2" style="text-align: left;">거래량 data</td>
+          <tr id="click_event1" style="width: 100%; height: 30px; background-color: #B5C7EC">
+              <td id="btn_mystock" colspan="3">관심</td>
+              <td id="btn_lead" colspan="3">주도업종</td>
+              <td id="btn_rank" colspan="3">순위</td>
+              <td id="btn_balance" colspan="3">잔고</td>
+              <td id="btn_da"colspan="3">예수금</td>
+              <td id="btn_log" colspan="3">일지</td>
           </tr>
-             </table>
-     </div>    
+          <tr id="click_event2" style="width: 100%; height: 30px; background-color: white">
+            <td id="btn_lmystock" colspan="2">보유종목</td>
+            <td id="btn_attention" colspan="2">관심종목</td>
+          </tr>
+          <tr id="attention_title" border="1"; bordercolor="black";
+              style="width: 100%; height: 30px; text-align: center; background-color: #84A3E0;">
+            <td colspan="2">종목명</td>
+            <td colspan="2">현재가</td>
+            <td colspan="2">대비</td>
+            <td colspan="2">등락률</td>
+            <td colspan="2">시가</td>
+            <td colspan="2">고가</td>
+            <td colspan="2">저가</td>
+            <td colspan="2">매도호가</td>
+            <td colspan="2">매수호가</td>
+            <td colspan="2">거래량</td>
+          </tr>
+          <tr id="attention_data" style="width: 100%;">
+            <td colspan="2" style="text-align: left;">보유종목명 data</td>
+            <td colspan="2" style="text-align: center;">현재가 data</td>
+            <td colspan="2" style="text-align: center;">대비 data</td>
+            <td colspan="2" style="text-align: center;">등락률 data</td>
+            <td colspan="2" style="text-align: center;">시가 data</td>
+            <td colspan="2" style="text-align: left;">고가 data</td>
+            <td colspan="2" style="text-align: left;">저가 data</td>
+            <td colspan="2" style="text-align: left;">매도호가 data</td>
+            <td colspan="2" style="text-align: left;">매수호가 data</td>
+            <td colspan="2" style="text-align: left;">거래량 data</td>
+          </tr>
+        </table>
+      </div>
      <div id="d_two" style="width: 525px; height: 600px; overflow: auto; background-color: white; float: right;">
         <table id="tab2" border="1" bordercolor="black" style="width: 100%; height: 100%; text-align: center;">
         <tr style="background-color: #B5C7EC">
@@ -519,7 +520,7 @@ trading_vue = {
                 </td>
                 <td>이름</td>
                 <td>비밀번호</td>
-                <td colspan="2">
+                <td colspan="3">
                 <input type="radio" name="day" value="당일">당일
                 <input type="radio" name="period" value="기간별">기간별
                 <td colspan="3"><input type="date"></td>

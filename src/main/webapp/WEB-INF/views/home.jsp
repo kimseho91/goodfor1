@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-heroic-features/css/heroic-features.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://blackrockdigital.github.io/startbootstrap-heroic-features/vendor/jquery/jquery.min.js"></script>
-	
+	<!-- <link rel="shortcut icon" href="#"> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- 추가 -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> <!-- 추가 --> 
 	<!-- <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
@@ -47,7 +47,6 @@
 	
 </head>
 <body>
-<div></div>
 	<script>
 		app.run('<%=application.getContextPath()%>');
 	</script>
