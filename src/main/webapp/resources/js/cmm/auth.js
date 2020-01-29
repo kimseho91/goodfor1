@@ -54,7 +54,7 @@ auth = (()=>{
 				$('#body_main').empty()
 				.html(customer_vue.custMain({css: $.css(), img: $.img()}))
 				.appendTo('#body_main')
-				notice.onCreate()
+				/* notice.onCreate() */
 			})
 			$('#btn_admin').click(e=>{
 				e.preventDefault()

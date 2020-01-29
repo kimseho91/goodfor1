@@ -77,16 +77,34 @@ auth_vue = {
 						<ol class="carousel-indicators">
 						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+						<li data-target="#myCarousel" data-slide-to="4"></li>
 						</ol>
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
 						<div class="item active">
-							<img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMjBfMzkg/MDAxNTc5NTA2NTQ2MTIw.T4NtQ5DxbLOfFjPDbk-E6nYuYyvK9OgmTs8PrOg7A-gg.8JPLj8bzXREMAo7gL7Z-bfDD-yb25KE4Fi9K_AF2g8cg.JPEG/main_img2.jpg?type=w740" alt="img1" style="width:100%; height: 400px;">
+							<img src="${x.img}/main1.png" alt="img1" style="width:100%; height: 400px;">
 							<div class="carousel-caption">
 							</div>
 						</div>
 						<div class="item">
-							<img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMjBfMjYg/MDAxNTc5NTA2NTQ1NTQz.xeC1tOWmxDhshk5WZjEgWFJJRV8YaGXzJlFz3TyyhzQg.XL5IeqbdNI9RVaHRRfzq9X0F88pNes1BXMihc6ruprMg.JPEG/main_img.jpg?type=w740" alt="img2" style="width:100%; height: 400px;">
+							<img src="${x.img}/main2.png" alt="img2" style="width:100%; height: 400px;">
+							<div class="carousel-caption">
+							</div>
+						</div>
+						<div class="item">
+							<img src="${x.img}/main3.png" alt="img3" style="width:100%; height: 400px;">
+							<div class="carousel-caption">
+							</div>
+						</div>
+						<div class="item">
+							<img src="${x.img}/main4.jpg" alt="img4" style="width:100%; height: 400px;">
+							<div class="carousel-caption">
+							</div>
+						</div>
+						<div class="item">
+							<img src="${x.img}/main5.jpg" alt="img5" style="width:100%; height: 400px;">
 							<div class="carousel-caption">
 							</div>
 						</div>
@@ -104,24 +122,24 @@ auth_vue = {
 				</div>            
             </div>
              <div id="body_icon" style="margin-top: 10%; margin-left: 37%;">
-                <img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMTZfMjAz/MDAxNTc5MTQwOTY3OTE0.95-bo0_ntpxsrIeoIqWUoHT-TVUYs0YDlNDtLZ8z92Ug.wz3LUDP5Kd0t0ekbeuTzgicMqpwGplqC_knxJrr3FL8g.PNG/account2.png?type=w740" alt="" style="width: 150px;">
+                <img src="${x.img}/icon1.png" alt="" style="width: 150px;">
                 <div style="display: inline-block; width: 30px;"></div>
-                <img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMTZfMTM5/MDAxNTc5MTQwOTY3NjMy.mZJis_aj0h2tU1VmFFoGZnj2Xo3N-oj7BI5ULU1NbdQg.l6pSBxTuVMfj4Z_eCCRL9ND1exLMYmYVFge1qmLTqv0g.PNG/mymoney2.png?type=w740" alt="" style="width: 150px;">
+                <img src="${x.img}/icon2.png" alt="" style="width: 150px;">
                 <div style="display: inline-block; width: 30px;"></div>
-                <img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMTdfMTY0/MDAxNTc5MjUxNTcwMTkz.PfILgtr9LAgoheS-NvBQSxDoFE-Oc_4xyAroHjY_h9gg.Xt_Q5DWb61N4M_-3nn9KlwQhuvNev3s_pDkS2mA3rCAg.PNG/info.png?type=w740" alt="" style="width: 150px;">
+                <img src="${x.img}/icon3.png" alt="" style="width: 150px;">
 			</div>
 			<div id="body_event" style="margin-top: 15%; margin-left: 25%;">
-				<img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMjBfODQg/MDAxNTc5NTEyMjIxMTM3.ZvWdkwURj9qw6aQHOBXAPph-v_J5lFGxeHe725PPxSIg.5j6q6MQyMyl6ToCILOaSY0wumUzokEXfv3mki5_CYaEg.JPEG/event_img1.jpg?type=w740" alt="" style="width: 200px; margin-left: 3%;" />
+				<img src="${x.img}/event1.jpg" alt="" style="width: 200px; margin-left: 3%;" />
 
-				<img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMjBfMjA3/MDAxNTc5NTEyOTA3MDQz.f0pBrEa_SdGtvWgsSom4ZpWTRPZ2HM6IdY5_ebWMwswg.YC6DLFE7I6wjEflroLdhRupYVVUQMHrbFiVBZTZJ8c0g.JPEG/event_img2.jpg?type=w740" alt="" style="width: 200px; margin-left: 3%;" />
+				<img src="${x.img}/event2.jpg" alt="" style="width: 200px; margin-left: 3%;" />
 				
-				<img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMjBfODQg/MDAxNTc5NTEyMjIxMTM3.ZvWdkwURj9qw6aQHOBXAPph-v_J5lFGxeHe725PPxSIg.5j6q6MQyMyl6ToCILOaSY0wumUzokEXfv3mki5_CYaEg.JPEG/event_img1.jpg?type=w740" alt="" style="width: 200px; margin-left: 3%;" />
+				<img src="${x.img}/event1.jpg" alt="" style="width: 200px; margin-left: 3%;" />
 				
-				<img src="https://cafeptthumb-phinf.pstatic.net/MjAyMDAxMjBfMjA3/MDAxNTc5NTEyOTA3MDQz.f0pBrEa_SdGtvWgsSom4ZpWTRPZ2HM6IdY5_ebWMwswg.YC6DLFE7I6wjEflroLdhRupYVVUQMHrbFiVBZTZJ8c0g.JPEG/event_img2.jpg?type=w740" alt="" style="width: 200px; margin-left: 3%;" />
+				<img src="${x.img}/event2.jpg" alt="" style="width: 200px; margin-left: 3%;" />
 			</div>
 		</div>
-		<div id="s-footer" style="margin-top: 100px;">
-			<h3 style="margin-left: 37%;">2019 - 2020 © Goodfor. - www.Goodfor.com</h3>
+		<div id="s-footer" style="margin-top: 100px; margin-left: 37%; position:fixed;">
+			<h3>2019 - 2020 © Goodfor. - www.Goodfor.com</h3>
 		</div>
 		</div>`
 	},
