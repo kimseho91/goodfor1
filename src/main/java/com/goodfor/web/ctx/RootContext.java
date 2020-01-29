@@ -26,11 +26,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class RootContext {
 	@Bean
 	public DataSource dataSource() {
-		
+
 		  DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
 		  	dataSource.setDriverClassName("org.mariadb.jdbc.Driver");
-		    dataSource.setUrl("jdbc:mariadb://localhost:3306/mysql");
+		    dataSource.setUrl("jdbc:mariadb://192.168.6.65/mysql");
 		    dataSource.setUsername("goodfor");
 		    dataSource.setPassword("goodfor");
 
@@ -40,7 +40,4 @@ public class RootContext {
 	public DataSourceTransactionManager txManager() {
 		return new DataSourceTransactionManager(dataSource());
 	}
-	
-	
-	
 }

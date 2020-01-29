@@ -22,7 +22,7 @@ s_admin01_vue = {
                                 <a id="s_admin_m3" href="#"><i class="fi-bar-graph-2"></i><span> System Monitoring </span> <span class="menu-arrow"></span></a>
                             </li>
                             <li>
-                                <a id="s_admin_m4" href="#"><i class="fi-mail"></i><span> Q&A Mangement </span> <span class="menu-arrow"></span></a>
+                                <a id="s_admin_m4" href="#"><i class="fi-mail"></i><span> System Management </span> <span class="menu-arrow"></span></a>
                             </li>
                 		</ul>
 					</div>	<!-- Sidebar-menu end -->
@@ -33,7 +33,7 @@ s_admin01_vue = {
             
             <div id="s_body_div01" class="content-page">
                 
-                <div class="content">	<!-- Start content -->
+                <div>	<!-- Start content -->
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
@@ -43,6 +43,7 @@ s_admin01_vue = {
                                 </div>
                             </div>
                         </div>	<!-- end row -->
+                        
                         <div class="row">
                             <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
                                 <div class="card-box tilebox-one">

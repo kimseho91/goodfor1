@@ -43,18 +43,46 @@ s_admin = (()=>{
 			})
 			$('#s_admin_m3').click(e=>{
 				e.preventDefault()
-				$('#body_main')
+				$('#s_body_div01')
 				.empty()
 				.html(s_admin03_vue.admin03_body({css: $.css(), img: $.img(), ctx: $.ctx()}))
-				.appendTo('#body_main')
+				.appendTo('#s_body_div01')
 				onCreate()
 			})
 			$('#s_admin_m4').click(e=>{
 				e.preventDefault()
-				$('body').empty().html(s_admin04_vue.admin04_body())
+				$('#s_body_div01')
+				.empty()
+				.html(s_admin04_vue.admin04_body({css: $.css(), img: $.img(), ctx: $.ctx()}))
+				.appendTo('#s_body_div01')
+				adminmenu4()
 			})
 		})
 		.fail()
+	}
+	
+	let adminmenu4 =()=>{
+		
+		$('#s_createsummarytable')
+		.click(e=>{
+			e.preventDefault()
+			alert('s_createsummarytable 버튼 클릭'+_)
+			$.getJSON(_+'/admin/create/summarytable',
+				d=>{
+				alert('summary table create : '+d.msg)
+			})
+		})
+		
+		$('#s_dropsummarytable')
+		.click(e=>{
+			e.preventDefault()
+			alert('s_dropsummarytable 버튼 클릭'+_)
+			$.getJSON(_+'/admin/drop/summarytable',
+				d=>{
+				alert('summary table drop : '+d.msg)
+			})
+		})
+		
 	}
 	
 	return{ onCreate }

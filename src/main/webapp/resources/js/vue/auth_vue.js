@@ -3,7 +3,7 @@ var auth_vue = auth_vue || {}
 auth_vue = {
 	auth_body: x=>{
 		return `<div id="s-header">
-		
+
 			<div class="topbar">
                 <div class="topbar-left">
                     <a href="#" class="logo" id="btn_main">
@@ -13,21 +13,21 @@ auth_vue = {
                     </a>
                 </div>
                 <nav class="navbar-custom">
-                    <ul class="list-unstyled topbar-right-menu float-right mb-0">
-	                    <li class="nav-link dropdown-toggle arrow-none waves-light waves-effect">
-                            <div id="btn_trading" style="display:inline-block;width:200px;color:white;font-size:15px">트레이딩</div>
-							<div id="btn_stockinfo" style="display:inline-block;width:200px;color:white;font-size:15px">주식정보</div>
-							<div id="btn_mypage" style="display:inline-block;width:200px;color:white;font-size:15px">마이페이지</div>
-							<div id="btn_notice" style="display:inline-block;width:200px;color:white;font-size:15px">공지사항</div>
-							<div id="btn_admin" style="display:inline-block;width:200px;color:white;font-size:15px">관리자</div>
-							<div id="btn_login" style="display:inline-block;width:200px;color:white;font-size:15px">로그인</div>
-							<div id="btn_join" style="display:inline-block;width:200px;color:white;font-size:15px">회원가입</div>
-						</li>
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0" style="width: 70%;">
+	                    <li class="nav-link dropdown-toggle arrow-none waves-light waves-effect" style="margin-right: 170px; width: 70%;">
+                            <div id="btn_trading" style="display:inline-block;width:15%;color:white;font-size:15px">트레이딩</div>
+							<div id="btn_stockinfo" style="display:inline-block;width:15%;color:white;font-size:15px">주식정보</div>
+							<div id="btn_mypage" style="display:inline-block;width:15%;color:white;font-size:15px">마이페이지</div>
+							<div id="btn_notice" style="display:inline-block;width:15%;color:white;font-size:15px">공지사항</div>
+							<div id="btn_admin" style="display:inline-block;width:15%;color:white;font-size:15px">관리자</div>
+							<div id="btn_login" style="display:inline-block;width:15%;color:white;font-size:15px">로그인</div>
+							<div id="btn_join" style="display:inline-block;width:15%;color:white;font-size:15px">회원가입</div>
+							</li>
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" href="#">
                                 <i class="fi-bell noti-icon"></i>
                             </a>
-                        </li>
+                        	</li>
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fi-speech-bubble noti-icon"></i>
@@ -78,48 +78,36 @@ auth_vue = {
 						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 						<li data-target="#myCarousel" data-slide-to="1"></li>
 						<li data-target="#myCarousel" data-slide-to="2"></li>
-						<li data-target="#myCarousel" data-slide-to="3"></li>
-						<li data-target="#myCarousel" data-slide-to="4"></li>
 						</ol>
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
 						<div class="item active">
-							<img src="${x.img}/main1.png" alt="img1" style="width:100%; height: 400px;">
+							<img src="${x.img}/mainintro1.png" alt="img1" style="width:100%; height: 400px;">
 							<div class="carousel-caption">
 							</div>
 						</div>
 						<div class="item">
-							<img src="${x.img}/main2.png" alt="img2" style="width:100%; height: 400px;">
+							<img src="${x.img}/mainintro2.png" alt="img2" style="width:100%; height: 400px;">
 							<div class="carousel-caption">
 							</div>
 						</div>
 						<div class="item">
-							<img src="${x.img}/main3.png" alt="img3" style="width:100%; height: 400px;">
-							<div class="carousel-caption">
-							</div>
-						</div>
-						<div class="item">
-							<img src="${x.img}/main4.jpg" alt="img4" style="width:100%; height: 400px;">
-							<div class="carousel-caption">
-							</div>
-						</div>
-						<div class="item">
-							<img src="${x.img}/main5.jpg" alt="img5" style="width:100%; height: 400px;">
+							<img src="${x.img}/mainintro3.png" alt="img2" style="width:100%; height: 400px;">
 							<div class="carousel-caption">
 							</div>
 						</div>
 						</div>
-						<!-- Left and right controls -->
-						<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-						<span class="glyphicon glyphicon-chevron-left"></span>
-						<span class="sr-only">Previous</span>
-						</a>
-						<a class="right carousel-control" href="#myCarousel" data-slide="next">
-						<span class="glyphicon glyphicon-chevron-right"></span>
-						<span class="sr-only">Next</span>
-						</a>
+							<!-- Left and right controls -->
+							<a style="display:inline-block;color:gray;font-size:30px" href="#myCarousel" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+							<span class="sr-only">Previous</span>
+							</a>
+							<a style="display:inline-block;color:gray;font-size:30px;float:right" href="#myCarousel" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+							<span class="sr-only">Next</span>
+							</a>
 					</div>
-				</div>            
+				</div>
             </div>
              <div id="body_icon" style="margin-top: 10%; margin-left: 37%;">
                 <img src="${x.img}/icon1.png" alt="" style="width: 150px;">
@@ -132,9 +120,9 @@ auth_vue = {
 				<img src="${x.img}/event1.jpg" alt="" style="width: 200px; margin-left: 3%;" />
 
 				<img src="${x.img}/event2.jpg" alt="" style="width: 200px; margin-left: 3%;" />
-				
+
 				<img src="${x.img}/event1.jpg" alt="" style="width: 200px; margin-left: 3%;" />
-				
+
 				<img src="${x.img}/event2.jpg" alt="" style="width: 200px; margin-left: 3%;" />
 			</div>
 		</div>
@@ -143,10 +131,10 @@ auth_vue = {
 		</div>
 		</div>`
 	},
-	
+
 	join: () => {
 	    return `
-	    
+
 	    <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -168,7 +156,7 @@ auth_vue = {
 		.form-control:focus {
 			border-color: #007bff;
 		}
-	    .form-control, .btn {        
+	    .form-control, .btn {
 	        border-radius: 3px;
 	    }
 		.signup-form {
@@ -197,8 +185,8 @@ auth_vue = {
 		}
 		.signup-form input[type="checkbox"] {
 			margin-top: 2px;
-		}    
-	    .signup-form .btn {        
+		}
+	    .signup-form .btn {
 	        font-size: 16px;
 	        font-weight: bold;
 			background: #007bff;
@@ -212,7 +200,7 @@ auth_vue = {
 		.signup-form a {
 			color: #007bff;
 			text-decoration: none;
-		}	
+		}
 		.signup-form a:hover {
 			text-decoration: underline;
 		}
@@ -234,7 +222,7 @@ auth_vue = {
 	        </div>
 			<div class="form-group">
 	            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
-	        </div>        
+	        </div>
 	        <div class="form-group">
 				<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
 			</div>
@@ -246,14 +234,14 @@ auth_vue = {
 	</div>
 
 	</body>
-	     
-	       
+
+
 	    `
 	  },
 
 	  login: ()=> {
 	    return `
-	        
+
 	    <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -278,7 +266,7 @@ auth_vue = {
 	        min-height: 38px;
 	        border-radius: 2px;
 	    }
-	    .btn {        
+	    .btn {
 	        font-size: 15px;
 	        font-weight: bold;
 	    }
@@ -288,7 +276,7 @@ auth_vue = {
 	<body>
 		<div class="login-form">
 		    <form action="/examples/actions/confirmation.php" method="post">
-		        <h2 class="text-center">Log in</h2>       
+		        <h2 class="text-center">Log in</h2>
 		        <div class="form-group">
 		            <input id="login_uid" type="text" class="form-control" placeholder="Username" required="required" value="kim">
 		        </div>
@@ -301,7 +289,7 @@ auth_vue = {
 		        <div class="clearfix">
 		            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
 		            <a href="#" class="pull-right">Forgot Password?</a>
-		        </div>        
+		        </div>
 		    </form>
 		    <p class="text-center"><a id="a_join"href="#">회원가입</a></p>
 		     <p class="text-center"><a id="a_custMain"href="#">고객센터</a></p>
@@ -309,10 +297,10 @@ auth_vue = {
 	</div>
 
 	</body>
-	  
-	  `    
-	  
+
+	  `
+
 	  },
 
-    	
+
 };
