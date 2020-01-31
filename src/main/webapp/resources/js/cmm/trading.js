@@ -17,6 +17,7 @@ trading = (()=>{
 		)
 		.done(()=>{
 			setContentView()
+			crawl()
 		})
 		.fail()
 	}
@@ -35,10 +36,59 @@ trading = (()=>{
 			.appendTo('#d_one')
 			onCreate()
 		})
-		$('#btn_rank').click(e=>{
+		$('#lead_industry').click(e=>{
 			e.preventDefault()
 			$('#tab1').empty()
-			.html(trading_vue.trading_rank())
+			.html(trading_vue.trading_lead())
+			.appendTo('#d_one')
+			onCreate()
+		})
+		$('#lead_theme').click(e=>{
+			e.preventDefault()
+			$('#tab1').empty()
+			.html(trading_vue.trading_lead_theme())
+			.appendTo('#d_one')
+			onCreate()
+		})
+		$('#btn_uprank').click(e=>{
+			e.preventDefault()
+			$('#tab1').empty()
+			.html(trading_vue.trading_up_rank())
+			.appendTo('#d_one')
+			onCreate()
+		})
+		$('#uprank_kospi').click(e=>{
+			e.preventDefault()
+			$('#tab1').empty()
+			.html(trading_vue.trading_up_rank())
+			.appendTo('#d_one')
+			onCreate()
+		})
+		$('#uprank_kosdak').click(e=>{
+			e.preventDefault()
+			$('#tab1').empty()
+			.html(trading_vue.trading_up_rank_kosdak())
+			.appendTo('#d_one')
+			onCreate()
+		})
+		$('#btn_downrank').click(e=>{
+			e.preventDefault()
+			$('#tab1').empty()
+			.html(trading_vue.trading_down_rank())
+			.appendTo('#d_one')
+			onCreate()
+		})
+		$('#downrank_kospi').click(e=>{
+			e.preventDefault()
+			$('#tab1').empty()
+			.html(trading_vue.trading_down_rank())
+			.appendTo('#d_one')
+			onCreate()
+		})
+		$('#downrank_kosdak').click(e=>{
+			e.preventDefault()
+			$('#tab1').empty()
+			.html(trading_vue.trading_down_rank_kosdak())
 			.appendTo('#d_one')
 			onCreate()
 		})
@@ -120,8 +170,6 @@ trading = (()=>{
 			onCreate()
 		})
 
-
 	}
-
 	return {onCreate}
 })();

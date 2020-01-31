@@ -1,4 +1,3 @@
-"use strict";
 var stockinfo_vue = stockinfo_vue || {}
 stockinfo_vue = {
 	stockinfo_body:()=>{
@@ -52,86 +51,55 @@ stockinfo_vue = {
 		<!--최근검색, 마이스톸-->
 		
 	<div class = "hpage4">
-	<div class="container">
-    	<div class="row">
-			<div class="col-md-6">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">상위 거래 목록</h3>
-						
-					</div> 
-					<div class="panel-body">
-						<input type="text" style="width:330px;height:45px;font-size:20px; border-top-left-radius: 5px;border-top-right-radius: 5px;
-						border-bottom-right-radius: 5px;border-bottom-left-radius: 5px" id="dev-table-filter" placeholder="주식 검색"/>
-								<button type="button" class="btn btn-info">검색</button>
-
-					</div>
-					<table class="table table-hover" id="dev-table">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>거래상위</th>
-								<th>상한가</th>
-								<th>하한가</th>
-								<th>시가총액 상위</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>남선알미늄</td>
-								<td>Trout</td>
-								<td>kilgore</td>
-								<td>kilgore</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>동양네트워크</td>
-								<td>Loblaw</td>
-								<td>boblahblah</td>
-								<td>boblahblah</td>
-
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>까뮤이앤씨</td>
-								<td>Caulfield</td>
-								<td>penceyreject</td>
-								<td>penceyreject</td>								
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>까뮤이앤씨</td>
-								<td>Caulfield</td>
-								<td>penceyreject</td>
-								<td>penceyreject</td>								
-							</tr>
-						</tbody>
-						
-					</table>
-					<div style="text-align : center">
-                <ul class="pagination">
-    <li class="page-item disabled">
-      <a class="page-link" href="#">&laquo;</a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">2</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">3</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">4</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">5</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">&raquo;</a>
-    </li>
+		<div class="container">
+    		<div class="row">
+				<div style="width:90%; height: 50%">
+					<div class="panel panel-primary" style="width:100%; height: 400px">
+						<div class="panel-heading">
+							<h3 class="panel-title">상위 거래 목록</h3>
+						</div> 
+							<div class="panel-body">
+								<input type="text" style="width:40vh;height:45px;font-size:20px; border-top-left-radius: 5px;border-top-right-radius: 5px;
+								border-bottom-right-radius: 5px;border-bottom-left-radius: 5px" id="dev-table-filter" placeholder="주식 검색"/>
+										<button type="button" style="width:60px;height:40px;font-size:20px" class="btn btn-info">검색</button>
+							</div>
+								<table class="table table-hover" id="dev-table">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>종목명</th>
+											<th>거래상위</th>
+											<th>상한가</th>
+											<th>하한가</th>
+											<th>시가총액 상위</th>
+										</tr> 
+									</thead>
+						<tbody></tbody>
+								</table>
+					<div>
+	                <ul class="pagination" id="page_top">
+					    <li class="page-item disabled">
+					      <a class="page-link" href="#">&laquo;</a>
+					    </li>
+					    <li class="page-item active">
+					      <a class="page-link" href="#">1</a>
+					    </li>
+					    <li class="page-item">
+					      <a class="page-link" href="#">2</a>
+					    </li>
+					    <li class="page-item">
+					      <a class="page-link" href="#">3</a>
+					    </li>
+					    <li class="page-item">
+					      <a class="page-link" href="#">4</a>
+					    </li>
+					    <li class="page-item">
+					      <a class="page-link" href="#">5</a>
+					    </li>
+					    <li class="page-item">
+					      <a class="page-link" href="#">&raquo;</a>
+					    </li>
+					 </ul>
               </div>
 				</div>
 			</div>
@@ -139,87 +107,94 @@ stockinfo_vue = {
 		</div>
 	</div>
 	</div>
+	
 	<!--국내증시-->
 	<div class = "hpage5">
 		<div class="card border-danger mb-3" style="max-width: 90%; height: 90%; padding-left: 15px">
 			<div class="card-header"><h2>국내증시</h2></div>
 				<div class="card-body">
-					<h4 class="card-title">국내증시 차트 크롤링</h4>
-						<p class="card-text">각각 크롤링해서 국내증시 등락 보여주는 차트</p>
+				<table class="table table-hover" id="table_nation">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>종목명</th>
+								<th>거래상위</th>
+								<th>상한가</th>
+								<th>하한가</th>
+								<th>시가총액 상위</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="hcrawltr_3"></tr>
+						</tbody>
+						
+					</table>	
 			</div>
 		</div>
 	</div>
 		<!--이런식으로 많이 클릭한 것이나 
 		많이 구매 한것 랭킹 구현-->
 	<div class = "hpage6">
-	<div>
-	<div _ngcontent-nel-c149="" class="form-group form-inline">뉴스검색: <input _ngcontent-nel-c149="" type="text" name="searchTerm" class="form-control ml-2 ng-pristine ng-untouched ng-valid">
-		<button type="button" class="btn btn-info">검색</button>
-	</div>
-	<table _ngcontent-nel-c149="" class="table table-striped">
-	<thead _ngcontent-nel-c149=""><tr _ngcontent-nel-c149="">
-	<th _ngcontent-nel-c149="" scope="col">#</th>
-	<th _ngcontent-nel-c149="" scope="col" sbsortable="name">
-	<span _ngcontent-nel-c149="">증권뉴스</span>
-	</th></th>
-		</tr>
-		<tr>
-			<th>1</th>
-		</tr>
-		<tr>
-			<th>2</th>			
-		</tr>
-		<tr>
-			<th>3</th>			
-		</tr>
-		<tr>
-			<th>4</th>			
-		</tr>
-		<tr>
-			<th>5</th>			
-			</tr>
-		</tbody>
-		</table>
-	<div style="text-align : center" >
-	  <ul class="pagination">
-    <li class="page-item disabled">
-      <a class="page-link" href="#">&laquo;</a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">2</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">3</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">4</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">5</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">&raquo;</a>
-    </li>
-  </ul>
-	
-	
-	
-	</div>
-	</form>
-	</sb-ng-bootstrap-table>
-
-	</div>
+				<div style="width:90%; height: 90%">
+					<div class="form-group form-inline"><h2>뉴스검색:</h2><input style="width: 50vh" type="text" class="form-control ml-2 ng-pristine ng-untouched ng-valid">
+						<button type="button" class="btn btn-info" style="height: 40px; width: 60px"><h2>검색</h2></button>
+					</div>
+						<table class="table table-striped" id="crawl_news">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col" sbsortable="name">
+									<span>증권뉴스</span>
+							</thead>
+								<tbody>
+								</tbody>
+						</table>
+							  <ul class="pagination">
+						    <li class="page-item disabled">
+						      <a class="page-link" href="#">&laquo;</a>
+						    </li>
+						    <li class="page-item active">
+						      <a class="page-link" href="#">1</a>
+						    </li>
+						    <li class="page-item">
+						      <a class="page-link" href="#">2</a>
+						    </li>
+						    <li class="page-item">
+						      <a class="page-link" href="#">3</a>
+						    </li>
+						    <li class="page-item">
+						      <a class="page-link" href="#">4</a>
+						    </li>
+						    <li class="page-item">
+						      <a class="page-link" href="#">5</a>
+						    </li>
+						    <li class="page-item">
+						      <a class="page-link" href="#">&raquo;</a>
+						    </li>
+						  </ul>
+				</div>
 	</div>
 	<!--해외증시-->
 	<div class = "hpage7">
 	<div class="card border-primary mb-3" style="max-width: 90%; height: 90%; padding-left: 15px">
   <div class="card-header"><h2>해외증시</h2></div>
   <div class="card-body">
-    <h4 class="card-title">해외증시 차트 크롤링</h4>
-    <p class="card-text">각각 크롤링해서 해외증시 등락 보여주는 차트</p>
+    <table class="table table-hover" id="table_internation">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>종목명</th>
+								<th>거래상위</th>
+								<th>상한가</th>
+								<th>하한가</th>
+								<th>시가총액 상위</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="hcrawltr_2"></tr>
+						</tbody>
+						
+					</table>	
   </div>
 </div>
 </div>
@@ -254,7 +229,9 @@ stockinfo_vue = {
  position: relative;
   left: 60%;
 }
-
+.pagination{
+		justify-content: center;
+}
 </style>`
 	}
 }
