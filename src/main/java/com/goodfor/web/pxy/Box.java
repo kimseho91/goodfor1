@@ -1,6 +1,7 @@
 package com.goodfor.web.pxy;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.context.annotation.Lazy;
@@ -10,6 +11,7 @@ import lombok.Data;
 @Component @Lazy @Data
 public class Box<T>{
 	private ArrayList<T> list;
+	private HashMap<String, T> map;
 	
 	public Box(){
 		list = new ArrayList<>();	
@@ -33,4 +35,15 @@ public class Box<T>{
 	public void clear() {
 		list.clear();
 	}
+	public void put(List<String> x, List<T> y) {
+		for (int i = 0; i < x.size(); i++) {
+			map.put(x.get(i), y.get(i));
+		}
+		map.forEach((k, v) -> System.out.print(String.format("%s : %s", k, v)));
+
+	}
+	public void put(String x, T y) {
+		map.put(x, y);
+	}
+	
 }

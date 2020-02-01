@@ -13,5 +13,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SSummary {
-	private String summaryseq, caccount, stockcode, tradetype, tcount, tamount, createdate ; 
+	private String caccount, stockcode, tradetype, ordertype, tcount, tamount, ftamount, createdate ; 
 }

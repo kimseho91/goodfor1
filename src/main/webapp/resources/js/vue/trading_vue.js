@@ -241,7 +241,7 @@ trading_vue = {
   },
   trading_lead : ()=>{
     return ` <tr id="click_event1" style="width: 100%; height: 30px; background-color: #B5C7EC">
-                td id="btn_mystock" colspan="4">관심</td>
+                <td id="btn_mystock" colspan="4">관심</td>
                 <td id="btn_lead" colspan="4">업종 / 테마</td>
                 <td id="btn_uprank" colspan="4">상승</td>
                 <td id="btn_downrank" colspan="4">하락</td>

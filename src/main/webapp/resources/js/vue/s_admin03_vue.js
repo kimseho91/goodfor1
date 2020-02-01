@@ -7,7 +7,7 @@ s_admin03_vue = {
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box">
-                                <h4 class="page-title float-left">SYSTEM MONITORING</h4>
+                                <h4 class="page-title float-left">System Monitoring</h4>
                                 <div class="clearfix"></div>
                             </div>
                         </div>

@@ -1,17 +1,15 @@
 var stockinfo_vue = stockinfo_vue || {}
 stockinfo_vue = {
-	stockinfo_body:()=>{
-		return ` <!--그리드 틀-->
+	stockinfo_body:x=>{
+		return ` <!--그리드 틀+헤드제목-->
 	<div class = "hwrapper">
-										
-<!--첫번째 그리드 국기 클릭해서 국가이-->
-	<div class = "hpage1">
-		<div id="hflag_move">
-			<a class="hflag_move1" href="#hwrapper"><img src="https://img.themoin.com/public/img/circle-flag-us.svg"></a>
-			<a class="hflag_move2" href="#hwrapper"><img src="https://img.themoin.com/public/img/circle-flag-us.svg"></a>
-		    <a class="hflag_move3" href="#hwrapper"><img src="https://img.themoin.com/public/img/circle-flag-jp.svg"></a>
-		    <a class="hflag_move4" href="#hwrapper"><img src="https://img.themoin.com/public/img/circle-flag-cn.svg"></a>	
-		</div>
+		<div class = "hpage1">
+			<div id="hflag_move">
+				<a class="hflag_move1" href="#hwrapper"><img src="${x.img}/태극기.png" ></a>
+				<a class="hflag_move2" href="#hwrapper"><img src="https://img.themoin.com/public/img/circle-flag-us.svg"></a>
+			    <a class="hflag_move3" href="#hwrapper"><img src="https://img.themoin.com/public/img/circle-flag-jp.svg"></a>
+			    <a class="hflag_move4" href="#hwrapper"><img src="https://img.themoin.com/public/img/circle-flag-cn.svg"></a>	
+			</div>
 		<div><h2 style=" position: relative; left: 40%;">국가별 증시현황</h2></div>	
 	</div>
 	<!--차트를 보여주는 디브-->
@@ -66,39 +64,20 @@ stockinfo_vue = {
 								<table class="table table-hover" id="dev-table">
 									<thead>
 										<tr>
-											<th>#</th>
-											<th>종목명</th>
-											<th>거래상위</th>
-											<th>상한가</th>
-											<th>하한가</th>
-											<th>시가총액 상위</th>
+											<th>종목</th>
+											<th>현재가</th>
+											<th>고가</th>
+											<th>저가</th>
+											<th>변동</th>
+											<th>변동%</th>
+											<th>거래량</th>
 										</tr> 
 									</thead>
-						<tbody></tbody>
+									<tbody></tbody>
 								</table>
 					<div>
 	                <ul class="pagination" id="page_top">
-					    <li class="page-item disabled">
-					      <a class="page-link" href="#">&laquo;</a>
-					    </li>
-					    <li class="page-item active">
-					      <a class="page-link" href="#">1</a>
-					    </li>
-					    <li class="page-item">
-					      <a class="page-link" href="#">2</a>
-					    </li>
-					    <li class="page-item">
-					      <a class="page-link" href="#">3</a>
-					    </li>
-					    <li class="page-item">
-					      <a class="page-link" href="#">4</a>
-					    </li>
-					    <li class="page-item">
-					      <a class="page-link" href="#">5</a>
-					    </li>
-					    <li class="page-item">
-					      <a class="page-link" href="#">&raquo;</a>
-					    </li>
+					    
 					 </ul>
               </div>
 				</div>
@@ -116,12 +95,13 @@ stockinfo_vue = {
 				<table class="table table-hover" id="table_nation">
 						<thead>
 							<tr>
-								<th>#</th>
-								<th>종목명</th>
-								<th>거래상위</th>
-								<th>상한가</th>
-								<th>하한가</th>
-								<th>시가총액 상위</th>
+								<th>종목</th>
+								<th>현재가</th>
+								<th>고가</th>
+								<th>저가</th>
+								<th>변동</th>
+								<th>변동%</th>
+								<th>거래량</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -129,6 +109,10 @@ stockinfo_vue = {
 						</tbody>
 						
 					</table>	
+					<div>
+						<ul class="pagination" id="page_nation">
+							</ul>
+							</div>
 			</div>
 		</div>
 	</div>
@@ -136,8 +120,7 @@ stockinfo_vue = {
 		많이 구매 한것 랭킹 구현-->
 	<div class = "hpage6">
 				<div style="width:90%; height: 90%">
-					<div class="form-group form-inline"><h2>뉴스검색:</h2><input style="width: 50vh" type="text" class="form-control ml-2 ng-pristine ng-untouched ng-valid">
-						<button type="button" class="btn btn-info" style="height: 40px; width: 60px"><h2>검색</h2></button>
+					<div class="form-group form-inline">
 					</div>
 						<table class="table table-striped" id="crawl_news">
 							<thead>
@@ -149,64 +132,62 @@ stockinfo_vue = {
 								<tbody>
 								</tbody>
 						</table>
-							  <ul class="pagination">
-						    <li class="page-item disabled">
-						      <a class="page-link" href="#">&laquo;</a>
-						    </li>
-						    <li class="page-item active">
-						      <a class="page-link" href="#">1</a>
-						    </li>
-						    <li class="page-item">
-						      <a class="page-link" href="#">2</a>
-						    </li>
-						    <li class="page-item">
-						      <a class="page-link" href="#">3</a>
-						    </li>
-						    <li class="page-item">
-						      <a class="page-link" href="#">4</a>
-						    </li>
-						    <li class="page-item">
-						      <a class="page-link" href="#">5</a>
-						    </li>
-						    <li class="page-item">
-						      <a class="page-link" href="#">&raquo;</a>
-						    </li>
+							  <ul class="pagination" id="page_news">
+						    
 						  </ul>
 				</div>
 	</div>
 	<!--해외증시-->
 	<div class = "hpage7">
-	<div class="card border-primary mb-3" style="max-width: 90%; height: 90%; padding-left: 15px">
-  <div class="card-header"><h2>해외증시</h2></div>
-  <div class="card-body">
-    <table class="table table-hover" id="table_internation">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>종목명</th>
-								<th>거래상위</th>
-								<th>상한가</th>
-								<th>하한가</th>
-								<th>시가총액 상위</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr id="hcrawltr_2"></tr>
-						</tbody>
+		<div class="card border-primary mb-3" style="max-width: 90%; height: 90%; padding-left: 15px">
+			<div class="card-header">
+				<h2>해외증시</h2>
+			</div>
+			<div class="card-body" >
+				<table class="table table-hover" id="table_internation">
+					<colgroup>
+						<col width = "16%"/>	
+						<col width = "14%"/>	
+						<col width = "14%"/>	
+						<col width = "14%"/>	
+						<col width = "14%"/>	
+						<col width = "14%"/>	
+						<col width = "14%"/>	
+	
 						
-					</table>	
-  </div>
-</div>
-</div>
+					</colgroup>
+					<thead>
+						<tr>
+							<th>종목</th>
+							<th>현재가</th>
+							<th>고가</th>
+							<th>저가</th>
+							<th>변동</th>
+							<th>변동%</th>
+							<th>거래량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="hcrawltr_2">
+						</tr>
+					</tbody>
+				</table>	
+					<div>
+						<ul class="pagination" id="page_internation">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	</div>
+</div>
 	<style type="text/css">
 .hwrapper {
     display: grid;
     height : 100vh;
     width: 100% auto;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 10% 60% 50% 50%;
+    grid-template-rows: 10% 50% 50% 50%;
 }
 .hpage1{
 	grid-column: 1/3;
@@ -232,6 +213,7 @@ stockinfo_vue = {
 .pagination{
 		justify-content: center;
 }
+
 </style>`
 	}
 }

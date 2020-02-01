@@ -13,4 +13,6 @@ public class Inventory<T> {
 	public void clear() {inventory.clear();}
 	public T get(int i) {return inventory.get(i);}
 	public ArrayList<T> get(){return inventory;}
+	public int size() {return inventory.size();}
+	public String toString() {return inventory.toString();}
 }

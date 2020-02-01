@@ -13,4 +13,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	${DROP_SUMMARY}
 	</select>
 	
+	<insert id="insertSSummary" parameterType="SSummary">
+		INSERT INTO SUMMARY (CACCOUNT, STOCKCODE, TRADETYPE, ORDERTYPE, TCOUNT, TAMOUNT, FTAMOUNT, CREATEDATE)
+		VALUES ( #{caccount}, #{stockcode}, #{tradetype}, #{ordertype}, #{tcount}, #{tamount}, #{ftamount}, #{createdate} )
+	</insert>
+	
+	<select id="selectTcaseSummary" resultType="String">
+		SELECT SUM(TCOUNT) FROM SUMMARY
+	</select>
+	
+	<select id="selectTamountSummary" resultType="String">
+		SELECT SUM(TAMOUNT) FROM SUMMARY
+	</select>
+	
 </mapper>
