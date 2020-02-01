@@ -12,7 +12,7 @@ s_admin04_vue = {
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title float-left">SYSTEM MANAGEMENT</h4>
+                                    <h4 class="page-title float-left">System Management</h4>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>

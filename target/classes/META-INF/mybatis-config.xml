@@ -5,8 +5,13 @@
       	<setting name="mapUnderscoreToCamelCase" value="true"/>
   	</settings>
   	<typeAliases>
-  	
   		<typeAlias alias="SSummary" type="com.goodfor.web.sejong.SSummaryMapper"/>
- 
+  		<typeAlias alias="Board" type="com.goodfor.web.board.Board"/>
+	  	<typeAlias alias="BoardFAQ" type="com.goodfor.web.board.BoardFAQ"/>
+	  	<typeAlias alias="BoardNotice" type="com.goodfor.web.board.BoardNotice"/>
+	  	<typeAlias alias="BoardCustomer" type="com.goodfor.web.board.BoardCustomer"/>
+	 	<typeAlias alias="Customer"	type="com.goodfor.web.customer.Customer"/>
+	 	<typeAlias alias="PageProxy" type="com.goodfor.web.pxy.PageProxy"/>
+	 	<typeAlias alias="Info" type="com.goodfor.web.bonghyeon.Info"/>
 	</typeAliases>
 </configuration>

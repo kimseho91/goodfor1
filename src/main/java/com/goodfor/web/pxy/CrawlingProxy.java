@@ -7,161 +7,208 @@ import java.util.HashMap;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+import com.goodfor.web.bonghyeon.Info;
+import com.goodfor.web.bonghyeon.InfoMapper;
 
 @Component("crawler")
-public class CrawlingProxy extends Proxy{
+public class CrawlingProxy extends Proxy {
+	@Autowired Box<String> box;
 	@Autowired Inventory<HashMap<String, String>> inventory;
+	@Autowired
+	PageProxy pager;
+	@Autowired Info info;
+	@Autowired InfoMapper infoMapper;
+	
+	
+	public ArrayList<HashMap<String, String>> crawling(){
+		box.clear();
+		System.out.println("박스 크롤링 시작 지점");
+		try {
+			Document rawData = Jsoup.connect
+					("https://music.bugs.co.kr/recomreview?&order=listorder&page=2")
+					.timeout(10*1000).get();
+			Elements artist = rawData.select("div[class=recommendItem]"); 
+			HashMap<String, String> map = null;
+			for(Element e : artist) {
+				map = new HashMap<>();
+				map.put("list", e.text()+"\n ************** \n");
+				inventory.add(map);
+				System.out.println("크롤링 확인" + e.text());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return inventory.get();
+	}
+	
+	public ArrayList<HashMap<String, String>> bugsCrawling() {
+		inventory.clear();
+		try {
+			final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
+			String bugsurl = "https://music.bugs.co.kr/chart";
+			Connection.Response homePage = Jsoup.connect(bugsurl).method(Connection.Method.GET).userAgent(USER_AGENT)
+					.execute();
+			Document temp = homePage.parse();
+			Elements thumbnail = temp.select("a.thumbnail");
+			Elements title = temp.select("p.title");
+			Elements artist = temp.select("p.artist");
+			HashMap<String, String> map = null;
+		
+			for (int i=0; i < title.size(); i++) {
+				map = new HashMap<>();
+				map.put("seq", string(i+1));
+				map.put("title", title.get(i).text());
+				map.put("artist", artist.get(i).text());
+				map.put("thumbnail", thumbnail.get(i).select("img").attr("src"));
+				inventory.add(map);
+			}
+		} catch (Exception e) {
+		}
+		System.out.println("********************크롤링결과********************");
+		inventory.get().forEach(System.out :: println);
+		return inventory.get();
+	}
+	
+	@Transactional
 	public ArrayList<HashMap<String, String>> crawling1(){
 		inventory.clear();
 		try {
 			final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
-			String top = "https://www.moneycontrol.com/markets/global-indices/" ;
+			String top = "https://www.investing.com/equities/americas";
 			Connection.Response homePage;
 			homePage = Jsoup.connect(top) 
 					.method(Connection.Method.GET) 
 					.userAgent(USER_AGENT) 
 					.execute();
 			Document temp = homePage.parse();
-			Elements element = temp.select("div.glob_indi_lft");    
-			Elements tempforTitle = element.select("div.tbl_redtxt");
-//			System.out.println("1번입니다."+element.size());
-//			System.out.println("1번입니다."+tempforTitle.size());
-			HashMap<String, String> map = null;
-			for (int i=0; i <2;i++) {
-				map = new HashMap<>();
-				map.put("tempforTitle", tempforTitle.get(i).text());
+			Elements elements = temp.select("table#cross_rate_markets_stocks_1 tbody tr");
+			Elements first = elements.select("td");
+			inventory.clear();
 
-				inventory.add(map);
-	
+			HashMap<String, String> map = null;
+			for (int i=0; i <first.size();i+=10) {
+				map = new HashMap<>();
+				map.put("first1", first.get(i+1).text());
+				map.put("second1", first.get(i+2).text());
+				map.put("third1", first.get(i+3).text());
+				map.put("fourth1", first.get(i+4).text());
+				map.put("fifth1", first.get(i+5).text());
+				map.put("sixth1", first.get(i+6).text());
+				map.put("seventh1", first.get(i+7).text());
+				inventory.add(map);				
+				info.setCompany(first.get(i+1).text());
+				info.setNowPrice(first.get(i+2).text());
+				info.setHighPrice(first.get(i+3).text());
+				info.setLowPrice(first.get(i+4).text());
+				info.setNumChange(first.get(i+5).text());
+				info.setPerChange(first.get(i+6).text());
+				info.setTrade(first.get(i+7).text());
+				infoMapper.insertInfo(info);
+				System.out.println(info);
+				System.out.println("여기는 역시 안 찍히지?");
+				
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-//		System.out.println("11111----- 크롤링 결과 -------1111");
-//		inventory.get().forEach(System.out :: println);
 		return inventory.get();	
-	}	
+	}
+
 	public ArrayList<HashMap<String, String>> crawling2(){
 		inventory.clear();
 		try {
-			Document rawData = Jsoup.connect("https://money.cnn.com/data/us_markets/").timeout(10*1000).get();
-			Elements item = rawData.select("td[class=\"wsod_firstCol\"]");
-			Elements price = rawData.select("td[class=\"wsod_aRight\"] span");
-			Elements different = rawData.select("td[class=\"wsod_aRight\"] span span");
-//			Elements rate = rawData.select("td[class=\"wsod_aRight\"] span span");
-//			Elements amount = rawData.select("td[class=\"number\"]");
-//			Elements total = rawData.select("td[class=\"number_2\"]");
-
-//			System.out.println("2번입니다."+item.size());
-//			System.out.println("2번입니다."+price.size());
-//			System.out.println("2번입니다."+different.size());
-//			System.out.println("2번입니다."+rate.size());
-//			System.out.println("2번입니다."+amount.size());
-//			System.out.println("2번입니다."+total.size());
-			
-			
+			final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
+			String top = "https://kr.investing.com/equities/south-korea";
+			Connection.Response homePage;
+			homePage = Jsoup.connect(top) 
+					.method(Connection.Method.GET) 
+					.userAgent(USER_AGENT) 
+					.execute();
+			Document temp = homePage.parse();
+			Elements elements = temp.select("table#cross_rate_markets_stocks_1 tbody tr");
+			Elements first2 = elements.select("td");
+			inventory.clear();
 			HashMap<String, String> map = null;
-			for (int i=0; i <2;i++) {
+			for (int i=0; i <first2.size();i+=10) {
 				map = new HashMap<>();
-				map.put("item", item.get(i).text());
-				map.put("price", price.get(i).text());
-				map.put("different", different.get(i).text());
-//				map.put("rate", rate.get(i).text());
-//				map.put("amount", amount.get(i).text());
-//				map.put("total", total.get(i).text());
-				
+				map.put("first2", first2.get(i+1).text());
+				map.put("second2", first2.get(i+2).text());
+				map.put("third2", first2.get(i+3).text());
+				map.put("fourth2", first2.get(i+4).text());
+				map.put("fifth2", first2.get(i+5).text());
+				map.put("sixth2", first2.get(i+6).text());
+				map.put("seventh2", first2.get(i+7).text());
 				inventory.add(map);				
 			}
-//			System.out.println("\n******************\n" + inventory.toString());
 			
 		} catch (Exception e2) {
-			// TODO: handle exception
 			e2.printStackTrace();
 		}
-//		 System.out.println("2222--------크롤링 결과---------2222");
-//		 inventory.get().forEach(System.out :: println);
-
 		return inventory.get();
 	}
 	public ArrayList<HashMap<String, String>> crawling3(){
 		inventory.clear();
 		try {
 			final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
-			String news = "https://finance.naver.com/" ;
+			String news = "https://news.naver.com/main/list.nhn?sid2=258&sid1=101&mid=shm&mode=LS2D&date=20170425&page=3" ;
 			Connection.Response homePage;
 			homePage = Jsoup.connect(news) 
 					.method(Connection.Method.GET) 
 					.userAgent(USER_AGENT) 
 					.execute();
 			Document temp = homePage.parse();
-			Elements element = temp.select("div.section_strategy");    
-			Elements tempforTitle = element.select("ul li a");
-
-//			System.out.println("3번입니다."+element.size());
-//			System.out.println("3번입니다."+tempforTitle.size());
-
-			
-
+			Elements element = temp.select("ul.type06_headline");    
+			Elements tempforTitle = element.select("li dl dt");
+			inventory.clear();
 			HashMap<String, String> map = null;
-			for (int i=0; i <2;i++) {
+			for (int i=0; i <tempforTitle.size(); i+=2) {
 				map = new HashMap<>();
-				map.put("title", tempforTitle.get(i).text());
-
+				map.put("tempforTitle", tempforTitle.get(i).text());
 				inventory.add(map);
-	
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-//		System.out.println("3333------- 크롤링 결과 ----------333");
-//		inventory.get().forEach(System.out :: println);
+		System.out.println("3333------- 크롤링 결과 ----------333");
+		inventory.get().forEach(System.out :: println);
 		return inventory.get();	
 	}	
 	public ArrayList<HashMap<String, String>> crawling4(){
 		inventory.clear();
 		try {
 			final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
-			String inter = "https://www.moneycontrol.com/markets/global-indices/" ;
-			
+			String top = "https://kr.investing.com/equities/united-states";
 			Connection.Response homePage;
-			homePage = Jsoup.connect(inter) 
+			homePage = Jsoup.connect(top) 
 					.method(Connection.Method.GET) 
 					.userAgent(USER_AGENT) 
 					.execute();
 			Document temp = homePage.parse();
-			Elements name = temp.select("a.robo_medium");    
-			Elements currentV = temp.select("div.tbl_redtxt");
-			Elements change = temp.select("div.shw_1024");
-			Elements perChange = temp.select("td.hide_1024bx");
-			Elements high = temp.select("div.shw_1024");
-			
-//			System.out.println("4번입니다."+name.size());
-//			System.out.println("4번입니다."+currentV.size());
-//			System.out.println("4번입니다."+change.size());
-//			System.out.println("4번입니다."+perChange.size());
-//			System.out.println("4번입니다."+high.size());
-//			
-			
+			Elements elements = temp.select("table#cross_rate_markets_stocks_1 tbody tr");
+			Elements first4 = elements.select("td");
+			inventory.clear();
 			HashMap<String, String> map = null;
-			for (int i=0; i <2;i++) {
+			for (int i=0; i <first4.size();i+=10) {
 				map = new HashMap<>();
-				map.put("currentV", currentV.get(i).text());
-				map.put("change", change.get(i).text());
-				map.put("perChange", perChange.get(i).text());
-				map.put("high", high.get(i).text());
-				inventory.add(map);
+				map.put("first4", first4.get(i+1).text());
+				map.put("second4", first4.get(i+2).text());
+				map.put("third4", first4.get(i+3).text());
+				map.put("fourth4", first4.get(i+4).text());
+				map.put("fifth4", first4.get(i+5).text());
+				map.put("sixth4", first4.get(i+6).text());
+				map.put("seventh4", first4.get(i+7).text());
+				inventory.add(map);				
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-//		System.out.println("444-------- 크롤링 결과 ---------444");
-//		inventory.get().forEach(System.out :: println);
 		return inventory.get();
 	}
+	
 }

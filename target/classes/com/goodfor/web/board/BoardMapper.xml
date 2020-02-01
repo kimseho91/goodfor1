@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.goodfor.web.board.BoardMapper">
+	
+
+	<select id="selectBoardAllCount" resultType="int" parameterType="string">
+		SELECT COUNT(*)
+		COUNT FROM BOARD
+		WHERE CTYPE LIKE #{value}
+	</select>
+	
+	<select id="selectAllBoardFAQ" resultType="Board"
+		parameterType="PageProxy">
+		SELECT A.*
+		FROM
+		(SELECT *
+		FROM board
+		ORDER BY seq DESC
+		LIMIT
+		#{startRow}, #{pageSize}) A
+		where ctype like #{ctype}
+	</select>
+	
+	<select id="selectAllBoardCustomer" resultType="Board"
+		parameterType="PageProxy">
+		SELECT A.*
+		FROM
+		(SELECT *
+		FROM board
+		ORDER BY seq DESC
+		LIMIT
+		#{startRow}, #{pageSize}) A
+		where ctype like #{ctype} 
+	</select>
+	
+	<select id="selectAllBoardNotice" resultType="Board"
+		parameterType="PageProxy">
+		SELECT A.*
+		FROM
+		(SELECT *
+		FROM board
+		ORDER BY seq DESC
+		LIMIT
+		#{startRow}, #{pageSize}) A
+		where ctype like #{ctype} 
+	</select>
+	
+	<insert id="insertBoardWrite" parameterType="Board">
+		INSERT INTO
+		board(title, content, writer, ctype)
+		VALUES (#{title},#{content}, #{writer}, #{ctype})
+	</insert>	
+	<!-- 테이블당 글쓰기 할 경우 메소드 추가?  
+	<insert id="insertBoardWrite" parameterType="BoardFAQ">
+		INSERT INTO
+		board(title, content, writer, ctype)
+		VALUES (#{title},#{content}, #{writer}, #{ctype})
+	</insert>	
+	<insert id="insertBoardWrite" parameterType="BoardCustomer">
+		INSERT INTO
+		board(title, content, writer, ctype)
+		VALUES (#{title},#{content}, #{writer}, #{ctype})
+	</insert>
+	<insert id="insertBoardWrite" parameterType="BoardNotice">
+		INSERT INTO
+		board(title, content, writer, ctype)
+		VALUES (#{title},#{content}, #{writer}, #{ctype})
+	</insert>
+	-->
+	
+	<select id="selectBoardRead" parameterType="int"
+		resultType="Board">
+		select * from board where seq like #{seq}
+		
+	</select>
+
+	<update id="updateBoard" parameterType="Board">
+		update board
+		set title =	#{title}, content = #{content}
+		where seq like #{seq}
+	</update>
+
+	<delete id="deleteBoard" parameterType="int">
+		delete from board where
+		seq like #{seq}
+	</delete>
+
+	<select id="listPage" resultType="Board"
+		parameterType="PageProxy">
+		select * from board order by seq desc limit #{pageSize}
+	</select>
+	</mapper>

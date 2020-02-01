@@ -52,23 +52,12 @@ auth = (()=>{
 			$('#btn_notice').click(e=>{
 				e.preventDefault()
 				$('#body_main').empty()
-				.html(customer_vue.custMain({css: $.css(), img: $.img()}))
+				.html(customer_vue.cust_mainbody({css: $.css(), img: $.img()}))
 				.appendTo('#body_main')
-				/* notice.onCreate() */
+				customer.onCreate()
 			})
 			$('#btn_admin').click(e=>{
 				e.preventDefault()
-				$('#body_main').empty()
-				.html(s_admin01_vue.admin01_body({css: $.css(), img: $.img(), ctx: $.ctx()}))
-				.appendTo('#body_main')
-				s_admin.onCreate()
-			})
-			
-				$('#btn_admin').click(e=>{
-				e.preventDefault()
-				$('#body_main').empty()
-				.html(s_admin01_vue.admin01_body({css: $.css(), img: $.img(), ctx: $.ctx()}))
-				.appendTo('#body_main')
 				s_admin.onCreate()
 			})
 			$('#btn_stockinfo').click(e=>{
@@ -76,6 +65,7 @@ auth = (()=>{
 				$('#body_main').empty()
 				.html(stockinfo_vue.stockinfo_body({css: $.css(), img: $.img()}))
 				.appendTo('#body_main')
+				stockinfo.onCreate()
 			})
 			$('#btn_mypage').click(e=>{
 				e.preventDefault()
@@ -83,22 +73,94 @@ auth = (()=>{
 				.html(myPage_vue.main({css: $.css(), img: $.img()}))
 				.appendTo('#body_main')
 			})
-			$('#btn_login').click(e=>{
+			$('#btn_loginForm').click(e=>{
 				e.preventDefault()
 				$('#body_main').empty()
 				.html(auth_vue.login({css: $.css(), img: $.img()}))
 				.appendTo('#body_main')
+				login()
 			})
-			$('#btn_join').click(e=>{
+			$('#btn_joinForm').click(e=>{
 				e.preventDefault()
 				$('#body_main').empty()
 				.html(auth_vue.join({css: $.css(), img: $.img()}))
 				.appendTo('#body_main')
+				join()
 			})
 		})
 	}
 	let setContentView =()=>{
 		$('body').html(auth_vue.auth_body({css: $.css(), img: $.img()}))
+	}
+
+	let join =()=>{
+		$('#btn_join').click(e=>{
+			e.preventDefault()
+		
+		$.ajax({
+			url: _ + '/customers/',
+			type: 'POST',
+			dataType: 'json',
+			data: JSON.stringify({
+				cid: $('#join_cid').val(),
+				cpw: $('#join_cpw').val(),
+				cname: $('#join_userName').val(),
+				email: $('#join_email').val(),
+				pnumber: $('#join_pnumber').val(),
+				invest: $("#join_investRadio input[name='join_invest']:checked").val(),
+				rating : $('#join_rating').val()
+			}),
+			contentType: 'application/json',
+			success: d => {
+				alert('AJAX성공')
+				if (d.msg === 'success') {
+					$('body').html(auth_vue.auth_body({css: $.css(), img: $.img()}))
+					
+				} else {
+					alert('회원가입 실패')
+				}
+
+			},
+			error: e => {
+				alert('AJAX 실패')
+			}
+
+			})
+		})
+		
+	}
+	
+	let login =()=>{
+		
+		$('#btn_login').click(e=>{
+			e.preventDefault()
+		
+		$.ajax({
+			url: _ + '/customers/'+$('#login_cid').val(),
+			type: 'POST',
+			dataType: 'json',
+			data: JSON.stringify({
+				cid: $('#login_cid').val(),
+				cpw: $('#login_cpw').val()
+				
+			}),
+			contentType: 'application/json',
+			success: d => {
+				alert('AJAX성공')
+				$('#body_main').empty()
+				$('#s-header').empty()
+				$('#s-header').html(auth_vue.auth_header({css: $.css(), img: $.img()}))
+				//.appendTo('#s-header')
+										
+
+			},
+			error: e => {
+				alert('AJAX 실패')
+			}
+
+			})
+		})
+		
 	}
 
 	return {onCreate}	

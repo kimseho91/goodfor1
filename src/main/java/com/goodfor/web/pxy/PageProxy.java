@@ -13,6 +13,7 @@ public class PageProxy extends Proxy {
 	 			pageCount, pageSize, startPage, endPage, nowPage,
 	 			blockCount, blockSize, prevBlock, nextBlock, nowBlock; 
 	private boolean existPrev, existNext;
+	private String ctype, search, option;
 	
 	public void paging() {
 		pageCount= (rowCount%pageSize!=0)?(rowCount/pageSize)+1:rowCount/pageSize;
