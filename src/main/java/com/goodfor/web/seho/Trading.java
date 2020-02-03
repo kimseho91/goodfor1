@@ -1,6 +1,7 @@
-package com.goodfor.web.bonghyeon;
+package com.goodfor.web.seho;
 
 import org.springframework.stereotype.Component;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,8 @@ import lombok.NoArgsConstructor;
 @Component
 @AllArgsConstructor
 @NoArgsConstructor
-public class Info {
-	private String 
-		seq, company, nowPrice, highPrice, lowPrice, numChange, perChange, trade;
-	}
+public class Trading {
+	private String
+	seq, sname, nprice, pcompare, frate, volume, sprice, hprice, lprice, sellprice, purchaseprice;
+	
+}

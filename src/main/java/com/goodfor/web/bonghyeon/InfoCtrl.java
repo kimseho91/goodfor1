@@ -35,11 +35,14 @@ public class InfoCtrl{
 		pager.setPageSize(5);
 		pager.paging();	
 		List<Info> list = service.changePageSize(pager);
-		System.out.println("pager"+list);
-		System.out.println("pager"+list.size());
+		/*
+		 * System.out.println("pager"+list); System.out.println("pager"+list.size());
+		 */
 		pager.setRowCount(service.crawl1AllCount());
-		System.out.println("뭘까요?:"+service.crawl1AllCount());
-		System.out.println("페이지"+pager);
+		/*
+		 * System.out.println("뭘까요?:"+service.crawl1AllCount());
+		 * System.out.println("페이지"+pager);
+		 */
 		map.clear();
 		map.put("list", list);
 		map.put("pxy", pager);

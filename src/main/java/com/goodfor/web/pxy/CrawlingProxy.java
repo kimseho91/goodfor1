@@ -3,7 +3,6 @@ package com.goodfor.web.pxy;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -175,8 +174,10 @@ public class CrawlingProxy extends Proxy {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("3333------- 크롤링 결과 ----------333");
-		inventory.get().forEach(System.out :: println);
+		/*
+		 * System.out.println("3333------- 크롤링 결과 ----------333");
+		 * inventory.get().forEach(System.out :: println);
+		 */
 		return inventory.get();	
 	}	
 	public ArrayList<HashMap<String, String>> crawling4(){
@@ -208,6 +209,30 @@ public class CrawlingProxy extends Proxy {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return inventory.get();
+	}
+	
+	public ArrayList<HashMap<String, String>> naverCrawling(){
+		String url = "https://finance.naver.com/sise/sise_rise.nhn?sosok=0";
+		inventory.clear();
+		try {
+			Document rawData = Jsoup.connect(url).timeout(10*1000).get();
+			Elements stockinfo = rawData.select("div[class=box_type_l] tbody tr");
+			Elements sname = stockinfo.select("td");
+			HashMap<String, String> map = null;
+			for(int i=0; i< 3; i++) {
+				map = new HashMap<>();
+				map.put("stockinfo",stockinfo.get(i).text());
+				map.put("sname", sname.get(i).text());
+				inventory.add(map);
+			}
+//			System.out.println("inventory에 담긴 값 : " + inventory);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("===== 크롤링 결과 =====");
+		inventory.get().forEach(System.out :: println);
 		return inventory.get();
 	}
 	

@@ -44,9 +44,6 @@ auth = (()=>{
 			})
 			$('#btn_trading').click(e=>{
 				e.preventDefault()
-				$('#body_main').empty()
-				.html(trading_vue.trading_mainbody({css: $.css(), img: $.img()}))
-				.appendTo('#body_main')
 				trading.onCreate()
 			})
 			$('#btn_notice').click(e=>{
