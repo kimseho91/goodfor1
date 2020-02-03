@@ -36,7 +36,15 @@ auth = (()=>{
 			
 		).done(()=>{
 			setContentView()
-			$('#btn_main').click(e=>{
+			naviButton()
+		})
+	}
+	let setContentView =()=>{
+		$('body').html(auth_vue.auth_body({css: $.css(), img: $.img()}))
+	}
+
+	let naviButton=()=>{
+		$('#btn_main').click(e=>{
 				e.preventDefault()
 				$('body').empty()
 				.html(auth_vue.auth_body({css: $.css(), img: $.img()}))
@@ -44,9 +52,6 @@ auth = (()=>{
 			})
 			$('#btn_trading').click(e=>{
 				e.preventDefault()
-				$('#body_main').empty()
-				.html(trading_vue.trading_mainbody({css: $.css(), img: $.img()}))
-				.appendTo('#body_main')
 				trading.onCreate()
 			})
 			$('#btn_notice').click(e=>{
@@ -87,10 +92,6 @@ auth = (()=>{
 				.appendTo('#body_main')
 				join()
 			})
-		})
-	}
-	let setContentView =()=>{
-		$('body').html(auth_vue.auth_body({css: $.css(), img: $.img()}))
 	}
 
 	let join =()=>{
@@ -151,13 +152,11 @@ auth = (()=>{
 				$('#s-header').empty()
 				$('#s-header').html(auth_vue.auth_header({css: $.css(), img: $.img()}))
 				//.appendTo('#s-header')
-										
-
+				naviButton()
 			},
 			error: e => {
 				alert('AJAX 실패')
 			}
-
 			})
 		})
 		

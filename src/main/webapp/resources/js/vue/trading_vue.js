@@ -330,7 +330,7 @@ trading_vue = {
                 <td colspan="2">매수호가</td>
                 <td colspan="2">매도호가</td>
             </tr>
-               <tr style="width: 100%;">
+               <tr id="uprank_data" style="width: 100%;">
                 <td colspan="2" style="text-align: left;">KOSPI 상승 종목명 data</td>
                 <td colspan="2" style="text-align: center;">현재가 data</td>
                 <td colspan="2" style="text-align: center;">전일대비 data</td>
@@ -366,7 +366,7 @@ trading_vue = {
                 <td colspan="2">매수호가</td>
                 <td colspan="2">매도호가</td>
             </tr>
-               <tr style="width: 100%;">
+               <tr id="uprank_data" style="width: 100%;">
                 <td colspan="2" style="text-align: left;">KOSDAK 상승 종목명 data</td>
                 <td colspan="2" style="text-align: center;">현재가 data</td>
                 <td colspan="2" style="text-align: center;">전일대비 data</td>
@@ -402,7 +402,7 @@ trading_vue = {
                 <td colspan="2">매수호가</td>
                 <td colspan="2">매도호가</td>
             </tr>
-               <tr style="width: 100%;">
+               <tr id="uprank_data" style="width: 100%;">
                 <td colspan="2" style="text-align: left;">KOSPI 하락 종목명 data</td>
                 <td colspan="2" style="text-align: center;">현재가 data</td>
                 <td colspan="2" style="text-align: center;">전일대비 data</td>
@@ -438,7 +438,7 @@ trading_vue = {
                 <td colspan="2">매수호가</td>
                 <td colspan="2">매도호가</td>
             </tr>
-               <tr style="width: 100%;">
+               <tr id="uprank_data" style="width: 100%;">
                 <td colspan="2" style="text-align: left;">KOSDAK 하락 종목명 data</td>
                 <td colspan="2" style="text-align: center;">현재가 data</td>
                 <td colspan="2" style="text-align: center;">전일대비 data</td>
