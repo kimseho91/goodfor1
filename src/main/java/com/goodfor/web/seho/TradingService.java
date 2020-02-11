@@ -1,9 +1,9 @@
 package com.goodfor.web.seho;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-@Repository
-public interface TradingMapper {
+@Component
+public interface TradingService {
 	public Trading search(String stockname);
 	public void updateTrading(Trading param);
 	public void updateBizInfo(BizInfo param);

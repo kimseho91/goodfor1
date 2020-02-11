@@ -39,6 +39,7 @@ trading = (()=>{
 			$('#tab1').empty()
 			.html(trading_vue.trading_lead())
 			.appendTo('#d_one')
+			upjongcrawl()
 			button_click()
 		})
 		$('#lead_industry').click(e=>{
@@ -46,6 +47,7 @@ trading = (()=>{
 			$('#tab1').empty()
 			.html(trading_vue.trading_lead())
 			.appendTo('#d_one')
+			upjongcrawl()
 			button_click()
 		})
 		$('#lead_theme').click(e=>{
@@ -53,6 +55,7 @@ trading = (()=>{
 			$('#tab1').empty()
 			.html(trading_vue.trading_lead_theme())
 			.appendTo('#d_one')
+			themecrawl()
 			button_click()
 		})
 		$('#btn_uprank').click(e=>{
@@ -60,7 +63,7 @@ trading = (()=>{
 			$('#tab1').empty()
 			.html(trading_vue.trading_up_rank())
 			.appendTo('#d_one')
-			crawling()
+			uprankpicrawl()
 			button_click()
 		})
 		$('#uprank_kospi').click(e=>{
@@ -68,12 +71,15 @@ trading = (()=>{
 			$('#tab1').empty()
 			.html(trading_vue.trading_up_rank())
 			.appendTo('#d_one')
+			uprankpicrawl()
+			button_click()
 		})
 		$('#uprank_kosdak').click(e=>{
 			e.preventDefault()
 			$('#tab1').empty()
 			.html(trading_vue.trading_up_rank_kosdak())
 			.appendTo('#d_one')
+			uprankdakcrawl()
 			button_click()
 		})
 		$('#btn_downrank').click(e=>{
@@ -81,6 +87,7 @@ trading = (()=>{
 			$('#tab1').empty()
 			.html(trading_vue.trading_down_rank())
 			.appendTo('#d_one')
+			downrankpicrawl()
 			button_click()
 		})
 		$('#downrank_kospi').click(e=>{
@@ -88,6 +95,7 @@ trading = (()=>{
 			$('#tab1').empty()
 			.html(trading_vue.trading_down_rank())
 			.appendTo('#d_one')
+			downrankpicrawl()
 			button_click()
 		})
 		$('#downrank_kosdak').click(e=>{
@@ -95,6 +103,7 @@ trading = (()=>{
 			$('#tab1').empty()
 			.html(trading_vue.trading_down_rank_kosdak())
 			.appendTo('#d_one')
+			downrankdakcrawl()
 			button_click()
 		})
 		$('#btn_balance').click(e=>{
@@ -174,27 +183,151 @@ trading = (()=>{
 			.appendTo('#d_one')
 			button_click()
 		})
-	}
-	let crawling =()=>{
-		$.getJSON(_+'/tradings/navercrawl/',d=>{
-			console.log(d)
-			// let list = d.list;
-			$('#uprank_data').empty()
-			$.each(d,(i,j)=>{
-				if(i==2){
-					$('<td colspan="2"></td>').text(d.sname).appendTo('#uprank_data');
-					$('<td colspan="2"></td>').text(d.nprice).appendTo('#uprank_data');
-					$('<td colspan="2"></td>').text(d.pcompare).appendTo('#uprank_data');
-					$('<td colspan="2"></td>').text(d.frate).appendTo('#uprank_data');
-					$('<td colspan="2"></td>').text(d.volume).appendTo('#uprank_data');
-					$('<td colspan="2"></td>').text(d.sprice).appendTo('#uprank_data');
-					$('<td colspan="2"></td>').text(d.hprice).appendTo('#uprank_data');
-					$('<td colspan="2"></td>').text(d.lprice).appendTo('#uprank_data');
-					$('<td colspan="2"></td>').text(d.sellprice).appendTo('#uprank_data');
-					$('<td colspan="2"></td>').text(d.purchaseprice).appendTo('#uprank_data');
+
+		$('#tab2_searchbtn').click(e=>{
+			e.preventDefault()
+			$.ajax({
+				url:_+'/tradings/'+$('#tab2_input').val(),
+				type: 'POST',
+				dataType : 'json',
+				data : JSON.stringify({
+					stockname : $('#tab2_input').val()
+				}),
+				contentType:'application/json',
+				success: d =>{
+					alert('AJAX 성공')
+					if(d.msg === 'success'){
+						detailstock(d.trading)
+						button_click()
+					}else {
+						alert('디테일 정보 가져오기 실패')
+					}
+				},
+				error: e =>{
+					alert('AJAX 실패')
 				}
 			})
 		})
+	}
+	let uprankpicrawl =()=>{
+		$.getJSON(_+'/tradings/uprankpicrawl/',d=>{
+			console.log(d)
+			$('#uprank_data').empty()
+			$.each(d,(i,j)=>{
+				$('<tr id="uprank'+(i+1)+'"></tr>').appendTo('#uprank_data');
+				$('<td colspan="2"></td>').text(j.sname+(i+1)).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.nprice+(i+1)).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.pcompare+(i+1)).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.frate+(i+1)).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.volume+(i+1)).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.buyprice+(i+1)).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.sellprice+(i+1)).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.buytotal+(i+1)).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.sellprice+(i+1)).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.per+(i+1)).appendTo('#uprank_data tr');
+			})
+		})
+	}
+
+	let uprankdakcrawl =()=>{
+		$.getJSON(_+'/tradings/uprankdakcrawl/',d=>{
+			console.log(d)
+			$('#uprank_data').empty()
+			$.each(d,(i,j)=>{
+				$('<tr></tr>').appendTo('#uprank_data');
+				$('<td colspan="2"></td>').text(j.sname).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.nprice).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.pcompare).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.frate).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.volume).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.buyprice).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.sellprice).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.buytotal).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.sellprice).appendTo('#uprank_data tr');
+				$('<td colspan="2"></td>').text(j.per).appendTo('#uprank_data tr');
+			})
+		})
+	}
+
+	let downrankpicrawl =()=>{
+		$.getJSON(_+'/tradings/downrankpicrawl/',d=>{
+			console.log(d)
+			$('#downrank_data').empty()
+			$.each(d,(i,j)=>{
+				$('<tr></tr>').appendTo('#downrank_data');
+				$('<td colspan="2"></td>').text(j.sname).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.nprice).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.pcompare).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.frate).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.volume).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.buyprice).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.sellprice).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.buytotal).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.sellprice).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.per).appendTo('#downrank_data tr');
+			})
+		})
+	}
+	
+	let downrankdakcrawl =()=>{
+		$.getJSON(_+'/tradings/downrankdakcrawl/',d=>{
+			console.log(d)
+			$('#downrank_data').empty()
+			$.each(d,(i,j)=>{
+				$('<tr></tr>').appendTo('#downrank_data');
+				$('<td colspan="2"></td>').text(j.sname).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.nprice).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.pcompare).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.frate).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.volume).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.buyprice).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.sellprice).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.buytotal).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.sellprice).appendTo('#downrank_data tr');
+				$('<td colspan="2"></td>').text(j.per).appendTo('#downrank_data tr');
+			})
+		})
+	}
+
+	let upjongcrawl =()=>{
+		$.getJSON(_+'/tradings/upjongcrawl/',d=>{
+			console.log(d)
+			$('#lead_data').empty()
+			$.each(d,(i,j)=>{
+				$('<tr></tr>').appendTo('#lead_data');
+				$('<td colspan="4"></td>').text(j.sname).appendTo('#lead_data tr');
+				$('<td colspan="4"></td>').text(j.frate).appendTo('#lead_data tr');
+				$('<td colspan="3"></td>').text(j.total).appendTo('#lead_data tr');
+				$('<td colspan="3"></td>').text(j.up).appendTo('#lead_data tr');
+				$('<td colspan="3"></td>').text(j.maintenance).appendTo('#lead_data tr');
+				$('<td colspan="3"></td>').text(j.down).appendTo('#lead_data tr');
+			})
+		})
+	}
+
+	let themecrawl =()=>{
+		$.getJSON(_+'/tradings/themecrawl/',d=>{
+			console.log(d)
+			$('#lead_data').empty()
+			$.each(d,(i,j)=>{
+				$('<tr></tr>').appendTo('#lead_data');
+				$('<td colspan="3"></td>').text(j.tname).appendTo('#lead_data tr');
+				$('<td colspan="3"></td>').text(j.frate).appendTo('#lead_data tr');
+				$('<td colspan="4"></td>').text(j.threeday).appendTo('#lead_data tr');
+				$('<td colspan="2"></td>').text(j.up).appendTo('#lead_data tr');
+				$('<td colspan="2"></td>').text(j.maintenance).appendTo('#lead_data tr');
+				$('<td colspan="2"></td>').text(j.down).appendTo('#lead_data tr');
+				$('<td colspan="2"></td>').text(j.snameo).appendTo('#lead_data tr');
+				$('<td colspan="2"></td>').text(j.snamet).appendTo('#lead_data tr');
+			})
+		})
+	}
+
+	let detailstock =x=>{
+		$('#tab2').empty()
+		.html(trading_vue.detail_stock(x))
+		.appendTo('#tab2')
+
 	}
 
 	return {onCreate}

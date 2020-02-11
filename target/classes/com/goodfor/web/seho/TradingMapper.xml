@@ -4,6 +4,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.goodfor.web.seho.TradingMapper">
-
 	
+	<update id="updateTrading" parameterType="Trading">
+		UPDATE TRADING
+		SET NPRICE = #{nprice}, SELLPRICE = #{sellprice}, PCONTRAST = #{pcontrast}, BUYPRICE = #{buyprice},
+		FRATE = #{frate}, CPRICE = #{cprice}, TVOLUME = #{tvolume}, SPRICE = #{sprice}, TAMOUNT = #{tamount},
+		HPRICE = #{hprice}, FVALUE = #{fvalue},LPRICE = #{lprice}, ULPRICE = #{ulprice}, PULPRICE = #{pulprice},
+		DLPRICE = #{dlprice}, PDLPRICE = #{pdlprice}, PER = #{per}, EPS = #{eps}, FTWEEKTOP = #{ftweektop},
+		FTWEEKLOW = #{ftweeklow}, MTOTAL = #{mtotal}, TNUMSTOCK = #{tnumstock}, FNOW = #{fnow}, CAPITAL = #{capital}
+		WHERE STOCKCODE LIKE #{stockcode};
+	</update>
+	
+	<update id="updateBizInfo" parameterType="BizInfo">
+		UPDATE BIZINFO
+		SET MTAMOUNT = #{mtamount}, MTARANK = #{mtarank}, TNUMSTOCK = #{tnumstock}, FVALUEUNIT = #{fvalueunit}, FLNUMSTOCK = #{flnumstock},
+		FHNUMSTOCK = #{fhnumstock}, FERATE = #{ferate}, IOTSPRICE = #{iotsprice}, FTWEEKTOPLOW = #{ftweektoplow}, PERFG = #{perfg}, 
+		KRX = #{krx}, EPER = #{eper}, PBRFG = #{pbrfg}, DRATE = #{drate}, STPER = #{stper}, STRATE = #{strate}
+		WHERE STOCKCODE LIKE #{stockcode};
+	</update>
+	
+	<!-- <insert id="insertTrading" parameterType="Trading">
+	UPDATE TRADING
+	SET(STOCKCODE,STOCKNAME,NPRICE,SELLPRICE,PCONTRAST,BUYPRICE,FRATE,CPRICE,TVOLUME,SPRICE,
+		TAMOUNT,HPRICE,FVALUE,LPRICE,ULPRICE,PULPRICE,DLPRICE,PDLPRICE,
+		PER,EPS,FTWEEKTOP,FTWEEKLOW,MTOTAL,TNUMSTOCK,FNOW,CAPITAL)
+	VALUES (#{stockcode},#{stockname},#{nprice},#{sellprice},#{pcontrast},#{buyprice},#{frate},
+			#{cprice},#{tvolume},#{sprice},#{tamount},#{hprice},#{fvalue},#{lprice},#{ulprice},
+			#{pulprice},#{dlprice},#{pdlprice},#{per},#{eps},#{ftweektop},#{ftweeklow},#{mtotal},
+			#{tnumstock},#{fnow},#{capital})
+	</insert> -->
+	
+	<select id="search" resultType="Trading">
+		SELECT * FROM TRADING WHERE STOCKNAME LIKE #{stockname};
+	</select>
 </mapper>

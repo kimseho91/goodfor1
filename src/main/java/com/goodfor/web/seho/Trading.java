@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Trading {
-	private String
-	seq, sname, nprice, pcompare, frate, volume, sprice, hprice, lprice, sellprice, purchaseprice;
-	
+	private String stockcode, stockname, nprice, sellprice, pcontrast, buyprice, frate, cprice, 
+			tvolume, sprice, tamount, hprice, fvalue, lprice, ulprice, pulprice, dlprice, 
+			pdlprice, per, eps, ftweektop, ftweeklow, mtotal, tnumstock, fnow, capital;
+
 }

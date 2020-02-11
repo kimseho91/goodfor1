@@ -52,6 +52,8 @@ auth = (()=>{
 			})
 			$('#btn_trading').click(e=>{
 				e.preventDefault()
+				ingcrawl()
+				biz_info()
 				trading.onCreate()
 			})
 			$('#btn_notice').click(e=>{
@@ -132,7 +134,6 @@ auth = (()=>{
 	}
 	
 	let login =()=>{
-		
 		$('#btn_login').click(e=>{
 			e.preventDefault()
 		
@@ -160,6 +161,17 @@ auth = (()=>{
 			})
 		})
 		
+	}
+
+	let ingcrawl =()=>{
+		$.getJSON(_+'/tradings/ingcrawl/',d=>{
+		})
+	}
+
+	let biz_info =()=>{
+		$.getJSON(_+'/tradings/bizinfo/',d=>{
+
+		})
 	}
 
 	return {onCreate}	

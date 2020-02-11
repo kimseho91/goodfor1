@@ -13,5 +13,7 @@
 	 	<typeAlias alias="Customer"	type="com.goodfor.web.customer.Customer"/>
 	 	<typeAlias alias="PageProxy" type="com.goodfor.web.pxy.PageProxy"/>
 	 	<typeAlias alias="Info" type="com.goodfor.web.bonghyeon.Info"/>
+	 	<typeAlias alias="Trading" type="com.goodfor.web.seho.Trading"/>
+	 	<typeAlias alias="BizInfo" type="com.goodfor.web.seho.BizInfo"/>
 	</typeAliases>
 </configuration>
